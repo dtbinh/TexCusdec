@@ -128,12 +128,17 @@ This potential not only allows for maintaining links in the network but also for
 We would like to design a decentralized control strategy with the same aims as (\ref{controljad}) but such that it is optimal in some sense. 
 For this we consider minimizing the following objective functional 
 \begin{equation}
-J(x, v) = \int_{0}^{T}B(v(t), v(t)) + B(v(T), v(T)) + \int_{0}^{T}\sum_{p\in \mathcal{I}}\sum_{j\in \mathcal{N}_p(t)} V(\|x_p(t) - x_j(t)\|),
+J(x, v) = \int_{0}^{T}B(v(t), v(t)) + B(v(T), v(T)) + \int_{0}^{T}\sum_{p\in \mathcal{I}}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
 \label{Vt}
 \end{equation}
 where $B(v, v)$ as defined in (\ref{b})  stands for the velocity deviations throughout the systems' evolution, the term 
-$B(v(T), v(t))$ accentuates the importance of consensus emergence at the terminal observation, and $V$ is as in (\ref{potential}).
-Note, that we are only interested in maintaining the initial connectivity of the graph which rules of the risk for the potential to grow unbound.
+$B(v(T), v(t))$ accentuates the importance of consensus emergence at the terminal observation, and $\bar{V}$ is a potential that measures the relative distance between agents, which we would like to minimize
+\begin{equation}
+\bar{V}(r) = (R/N- r)^2, \qquad 0 < r.
+\label{potentialbar}
+\end{equation}
+The idea of this potential is to increase the force with which the agents are pulled together as number of the agents increases, which would provide the increased connectivity at of the network at the terminal configuration. Note, that we can not use the same potential as in (\ref{potential}) because the functional $J$ will not be coercive.
+
 
 
 
@@ -143,7 +148,7 @@ The decentralization strategy consists in decomposing the state domain in sub-do
 
  The algorithm adopts the model predictive control approach by partitioning the time interval $[0, T]$ into $m$ time windows of width $\Delta T$: $0 = T_0, T_1, T_2, \dots, T_m = T$ and for each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ for each agent $p$, $p = 1, \dots, N$  solving the following optimal control problem
 \begin{equation}
- \min_{x, v} J_p(x, v) = \int_{T_{l-1}}^{T_l}B(v(t), v(t)) + B(v(T_l), v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(t)} V(\|x_p(t) - x_j(t)\|),
+ \min_{x, v} J_p(x, v) = \int_{T_{l-1}}^{T_l}B(v(t), v(t)) + B(v(T_l), v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
 \label{opci}
 \end{equation}
 subject to (\ref{csm}) where $\mathcal{I} = \bar{\mathcal{N}}_p(T_l)$,  $N = N_p:= \# \bar{\mathcal{N}}_p(T_l)$, with initial conditions taken as endpoints form the solution on the previous time window $l-1$.
@@ -167,7 +172,7 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  $v(t) = (v_{i_1}(t), \dots, v_{i_{N_p}}(t))$, $\{i_1, \dots, i_{N_p}\} \in \bar{\mathcal{N}}_p(T_l)$, 
  and $z(t)$ is an auxiliary component 
  $$
- z(t) = B(v(t), v(t)) + \sum_{j\in \mathcal{N}_p(t)} V(\|x_p(t) - x_j(t)\|),
+ z(t) = B(v(t), v(t)) + \sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
  $$
  with the initial condition $z(0) = 0$, and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
  $$

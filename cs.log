@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  30 OCT 2016 17:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  31 OCT 2016 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -280,7 +280,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (7.48047pt too wide) in paragraph at lines 144--145
+Overfull \hbox (7.48047pt too wide) in paragraph at lines 149--150
 \OT1/cmr/m/n/10 the time in-ter-val $[0\OML/cmm/m/it/10 ; T\OT1/cmr/m/n/10 ]$ i
 nto $\OML/cmm/m/it/10 m$ \OT1/cmr/m/n/10 time win-dows of width $^^A\OML/cmm/m/
 it/10 T$\OT1/cmr/m/n/10 : $0 = \OML/cmm/m/it/10 T[]; T[]; T[]; [] ; T[] \OT1/cm
@@ -288,26 +288,25 @@ r/m/n/10 =
  []
 
 
-Overfull \hbox (11.68916pt too wide) detected at line 148
+Overfull \hbox (11.68916pt too wide) detected at line 153
 [] \OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; v\OT1/cmr/m/n/10 ) 
 = [][] \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 (\O
 ML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; v\OT1/cmr/m/n/10 (\OML/cmm/
 m/it/10 t\OT1/cmr/m/n/10 )) + \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 v\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; v\
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )) + [][] [] \OML/cmm/m/it/
-10 V\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/
-cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k\OT1/cmr/m/n/1
-0 )\OML/cmm/m/it/10 ;
+OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )) + [][] [] [](\OMS/cmsy/m
+/n/10 k\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )
+ \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\O
+T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
  []
 
 
-Overfull \hbox (0.74628pt too wide) in paragraph at lines 153--153
+Overfull \hbox (0.74628pt too wide) in paragraph at lines 158--158
 []\OT1/cmr/bx/n/14.4 The op-ti-mal con-tro prob-lem and its dis-cretiza-
  []
 
 
-Overfull \hbox (6.08781pt too wide) in paragraph at lines 162--169
+Overfull \hbox (6.08781pt too wide) in paragraph at lines 167--174
 \OT1/cmr/m/n/10 where the con-trol $\OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 \OML/
 cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 /cmm/m/it/10 ; \U/msb/m/n/10 R[]\OT1/cmr/m/n/10 )$, the state $\OML/cmm/m/it/10
@@ -326,7 +325,7 @@ df>
 (epstopdf)                    size: 56683 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40ev-ep
 s-converted-to.pdf figures/V5aT=20ndT=40ev.eps>
-(epstopdf)             \includegraphics on input line 314.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40ev-eps-converted-to.pdf, id=34, 421.575pt x 316.18124pt>
@@ -334,7 +333,7 @@ File: figures/V5aT=20ndT=40ev-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40ev-eps-converted-to.pdf used on i
-nput line 314.
+nput line 319.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 Package epstopdf Info: Source file: <figures/V5aT=20ndT=40g.eps>
 (epstopdf)                    date: 2016-10-29 16:47:14
@@ -345,7 +344,7 @@ f>
 (epstopdf)                    size: 5866 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40g-eps
 -converted-to.pdf figures/V5aT=20ndT=40g.eps>
-(epstopdf)             \includegraphics on input line 320.
+(epstopdf)             \includegraphics on input line 325.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40g-eps-converted-to.pdf, id=35, 421.575pt x 316.18124pt>
@@ -353,10 +352,10 @@ File: figures/V5aT=20ndT=40g-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40g-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40g-eps-converted-to.pdf used on in
-put line 320.
+put line 325.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 
-Overfull \hbox (71.22643pt too wide) in paragraph at lines 313--324
+Overfull \hbox (71.22643pt too wide) in paragraph at lines 318--329
 [][]  [] 
  []
 
@@ -369,7 +368,7 @@ df>
 (epstopdf)                    size: 10152 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40lf-ep
 s-converted-to.pdf figures/V5aT=20ndT=40lf.eps>
-(epstopdf)             \includegraphics on input line 329.
+(epstopdf)             \includegraphics on input line 334.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40lf-eps-converted-to.pdf, id=36, 421.575pt x 316.18124pt>
@@ -377,10 +376,10 @@ File: figures/V5aT=20ndT=40lf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40lf-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40lf-eps-converted-to.pdf used on i
-nput line 329.
+nput line 334.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
  [6]
-Overfull \hbox (3.52264pt too wide) in paragraph at lines 335--339
+Overfull \hbox (3.52264pt too wide) in paragraph at lines 340--344
 \OT1/cmr/m/n/10 through-out the the evo-lu-tion of the sys-tem with its ter-mi-
 nal value $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]; v[]\OT1/cmr
 /m/n/10 ) =
@@ -394,10 +393,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3974 strings out of 493315
- 57824 string characters out of 6145893
- 125154 words of memory out of 5000000
- 7376 multiletter control sequences out of 15000+600000
+ 3975 strings out of 493315
+ 57838 string characters out of 6145893
+ 125163 words of memory out of 5000000
+ 7377 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  44i,15n,42p,769b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -414,7 +413,7 @@ b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on cs.pdf (7 pages, 259283 bytes).
+Output written on cs.pdf (7 pages, 259814 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
