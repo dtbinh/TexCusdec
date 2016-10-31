@@ -122,13 +122,12 @@ where $\bar{v}_i = \sum_{j \in \mathcal{N}_i(t)} v_j$, and $V$ is an artificial 
  V(r) = \frac{1}{r^2} + \frac{1}{R^2 - r^2}, \qquad 0 < r < R.
 \label{potential}
 \end{equation}
-This potential not only allows for maintaining links in the network but also for avoiding collisions among the agents.
+This potential not only allows for maintaining links in the network but also for avoiding collisions among the agents. 
 
-
-We would like to design a decentralized control strategy with the same aims as (\ref{controljad}) but such that it is optimal in some sense. 
+The drawback of the control (\ref{controljad}) is that it has an essential discontinuity as $r \longrightarrow R$ which on one hand guarantees network connection maintenance but on the other hand, as forces to break the network connectivity become stronger it requires increasingly fine mesh to be solved numerically, which renders it impractical for applications. We would like to design a decentralized control strategy with the same aims as (\ref{controljad}) but such that it avoids the continuity problem and is optimal in some sense. 
 For this we consider minimizing the following objective functional 
 \begin{equation}
-J(x, v) = B(v(T), v(T)) + \int_{0}^{T}\sum_{p\in \mathcal{I}}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
+J(x, v) = B(v(T), v(T)) + \int_{0}^{T}\sum_{(p, j)\in \mathcal{E}(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
 \label{Vt}
 \end{equation}
 where $B(v(T), v(T))$ stands for the consensus emergence at the terminal observation, and $\bar{V}$ is a potential that measures the relative distance between agents, which we would like to minimize
@@ -295,7 +294,7 @@ The first order discrete system (\ref{os_state_x} - \ref{os_adjoint_psi}) provid
   
  
  
- 
+ \newpage
  \section{Numerical experiments}
 In this section some simulations are presented to testify the effectiveness of the proposed algorithm. We consider a multi-agent system (\ref{csm}) with the interaction function 
 $a$ as in (\ref{a}) for $\delta = 1$. The system is composed of $5$
@@ -317,8 +316,8 @@ v_0 =
 	      0&  -1\\
 \end{array} \right).
 \]
-The time of system evolution is $T = 20$ with  $m = 40$ uniform time windows, where  on each window the discretization grid
-is taken with $n = 80$ nodes.  The connection radius is $R = 2.5$. 
+The time of system evolution is $T = 30$ with  $m = 50$ uniform time windows, where  on each window the discretization grid
+is taken with $n = 10$ nodes.  The connection radius is $R = 2$. 
 
 In the first simulation we test our decentralized optimal control approach. On Figure \ref{ev} the evolution of the system is plotted. The initial position
 is denoted with circles while the final velocities are depicted with red arrows. On Figure \ref{g} the initial as well as terminal configurations and the connectivity graphs of the system are present.
@@ -326,33 +325,93 @@ is denoted with circles while the final velocities are depicted with red arrows.
 
 
 \begin{figure}[ht]
-  \begin{minipage}[b]{0.6\textwidth}
-    \includegraphics[width=\textwidth]{figures/V5aT=20ndT=40ev.eps}
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_ev.eps}
     \caption{Evolution of the system}
     \label{ev}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.6\textwidth}
-    \includegraphics[width=\textwidth]{figures/V5aT=20ndT=40g.eps}
-    \caption{The connectivity graphs}
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_g.eps}
+    \caption{Initial and terminal configurations}
     \label{g}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_cg0.eps}
+    \caption{Connectivity at the initial configuration}
+    \label{g0}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_cgT.eps}
+    \caption{Connectivity at the terminal configuration}
+    \label{gT}
   \end{minipage}
 \end{figure}
   
  
  \begin{figure}[ht]
  \centering
- \includegraphics[scale=0.5]{figures/V5aT=20ndT=40lf.eps}
+ \includegraphics[scale=0.5]{figures/a5D_L+V_fine_mesh_NICE_lv.eps}
  \caption{Lyapunov function}
  \label{lf}
  \end{figure}
+  \newpage
+The evolution of the system can be observed on the Figure \ref{ev1}. On the Figure \ref{lf} we see the velocity deviation throughout the evolution. The bump in the velocity deviation $B(v(t), v(t))$
+is due to the fact that initially the control steers the agents towards each other and after the completeness of the network graph (see Figure \ref{gT}) is reached it brings smoothly the system to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn}) = 4.21e-07$. Under such terminal configuration the system has entered the consensus region since quantity $E(x^{mn}, v^{mn}) = -0.50$ has become negative and the system tends to consensus uncontrolled.
  
- \newpage
- From Figure \ref{lf} we observe a steady decrease in velocity deviation $B(v, v)$ throughout the the evolution of the system with its terminal value $B(v^{mn}, v^{mn}) = 1.321e-05$.
- The small bump in the graph on Figure \ref{lf} is due to the fact that our optimal control strategy makes  a trade-off between maintaining the connectivity of the system and consensus emergence. 
- Nevertheless, it manages to bring the system to the region of consensus emergence since $E(x^{mn}, v^{mn}) = -0.0619$ becomes negative at the terminal configuration therefore, the system 
- tends to consensus uncontrolled.
+%a10D_L+V_fine_mesh_NICE_lv.eps
+We also  consider a \textquotedblleft worse-case\textquotedblright setting involving 10 agents with initial configuration (Figure \ref{g1}) situated on a  zig-zag line forming a minimally connected network at the initial time. The evolution of the system has been illustrated in Figure \ref{ev1} for $T = 30$ and radius of interaction $R = 2$, the number of MPC time windows was chosen $m = 80$  and discretization grid with $n = 40$ grid-points.  On Figure \ref{lf} is plotted the velocity deviation of the group $B(v(t), v(t))$. We observe how the system struggles to maintain the connectivity of the network throughout the evolution, in the end, after the completeness of the network graph is restored (Figure \ref{gT1}), it tends to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn}) = 1.83e-07$. Here again the consensus region is reached since $E(x^{mn}, v^{mn}) = -0.35$ is negative. 
  
+
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a10D_L+V_fine_mesh_NICE_ev.eps}
+    \caption{Evolution of the system}
+    \label{ev1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a10D_L+V_fine_mesh_NICE_g.eps}
+    \caption{Initial and terminal configurations}
+    \label{g1}
+  \end{minipage}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a10D_L+V_fine_mesh_NICE_cg0.eps}
+    \caption{Connectivity at the initial configuration}
+    \label{g01}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a10D_L+V_fine_mesh_NICE_cgT.eps}
+    \caption{Connectivity at the terminal configuration}
+    \label{gT1}
+  \end{minipage}
+\end{figure}
+  
+ 
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{figures/a10D_L+V_fine_mesh_NICE_lv.eps}
+ \caption{Lyapunov function}
+ \label{lf1}
+ \end{figure}
+  \newpage
+
+
+
+
+
+
+
 
 
 \end{document}
