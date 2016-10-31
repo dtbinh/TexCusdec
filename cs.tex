@@ -157,10 +157,8 @@ Therefore, at each time window $l$ we obtain for each agent $p$ a suitable decen
   
  \begin{align}
  \D
- \mbox{minimize}\quad  C(X(T)),\\
-  \mbox{subject to} \quad \dot{X} = F(X(t), u(t)),
-  X(0) = X_0,
- \label{opcm}
+ & \mbox{minimize}\quad  C(X(T)),   \label{compact_cost} \\ 
+ & \mbox{subject to} \quad \dot{X} = F(X(t), u(t)), \quad X(0) = X_0, \label{compact_equation}
  \end{align}
 where  the control $u \in  L^{\infty}([T_{l-1}, T_{l}], \mathbb{R}^{N_p \times d})$,
 the state $X\in H^1([T_{l-1}, T_{l}], \mathbb{R}^{N_p \times d} \times \mathbb{R}^{N_p\times d} \times \mathbb{R})$
@@ -171,7 +169,7 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  $$
  z(t) = B(v(t), v(t)) + \sum_{j\in \mathcal{N}_p(t)} V(\|x_p(t) - x_j(t)\|),
  $$
- and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
+ with the initial condition $z(0) = 0$, and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
  $$
  F(X(t), u(t)) =
   \left( 
@@ -182,7 +180,7 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  \end{array} 
  \right), 
  $$
- where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_l)}$ and depends on $x$.
+ where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_l)}$ which depends on $x$.
  For the functional $C$ to correspond to the problem in its original form it is chosen 
  $$
  C(X(T_l)) = z(T_l) + B(v(T_l), v(T_l)).
@@ -193,54 +191,57 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  
  
   
-  Given the problem (\ref{opcm}) we discretize it and obtain a discrete gradient with a Runge-Kutta scheme developed in [hager] on a uniform time mesh and the following time-step size
+  Given the problem (\ref{compact_cost} - \ref{compact_equation}) we discretize it with a third-order Runge-Kutta scheme. Such scheme for differential equations  must satisfy an additional condition to achieve third-order accuracy
+  for optimal control problems. For the third-order Runge-Kutta scheme, the discrete controls often converge to the continuous solution slower than the discrete state and adjoint variables at the grid points. Here, we utilise a better approximation to the continuous optimal control obtained from a posteriori computation involving the computed discrete state and adjoint variables  developed in [hager]. 
+  Consider a uniform time mesh and the following time-step size
  \begin{equation}
    h = \frac{\Delta T}{n},
    \label{h}
  \end{equation}
  where $n$ is the total number of discrete time intervals in $[0, \Delta T]$.  The value of $X(t)$ at the discrete time $t_k$ is denoted with
  $$
- X^k = X(t^k), \qquad t^k = k \quad\mbox{for} \quad k = 1, \dots n.
+ X^k = X(t^k), \qquad t^k = kh \quad\mbox{for} \quad k = 1, \dots n.
  $$
- We consider an $s$-stage Runge-Kutta discretization scheme defined by setting the coefficients $a_{ij}$ and
- $b_{i}$, $1\leq i, j\leq s$, such that they satisfy conditions given in [hager].
+ For an $s$-stage Runge-Kutta discretization scheme it is defined by setting the coefficients $a_{ij}$ and
+ $b_{i}$, $1\leq i, j\leq s$, such that they satisfy conditions given in [hager]. 
  
- Corresponding to the discretezation setting, the optimal control problem (\ref{opcm})  attains the following form
+ Corresponding to the discretization setting, the optimal control problem (\ref{compact_cost} -  \ref{compact_equation})  attains the following form
  
  \begin{align}
   \D
-  \mbox{minimize}\quad C(X_n),\\
-   \mbox{subject to} \quad X^{k+1}  = X^k + h\sum_{i=1}^{s}b_iF(y^i, u^{ki}), \qquad X_0 = X(0),\\
-	y^i = X^k + h\sum_{j=1}^{s}a_{ij}F(y^j, u^{kj}),
-  \label{opcmd}
+  & \mbox{minimize}\quad C(X_n), \label{discrete_cost}\\
+  & \mbox{subject to} \quad X^{k+1}  = X^k + h\sum_{i=1}^{s}b_iF(y^{ki}, u^{ki}), \qquad X_0 = X(0), \label{discrete_equation_x}\\
+  & y^{ki} = X^k + h\sum_{j=1}^{s}a_{ij}F(y^{kj}, u^{kj}),\label{discrete_equation_y}
   \end{align}
  
  for $1\leq i, j\leq s$, and $0\leq k\leq n-1$.
- Where the vectors $y^j$ and $u^{kj}$ are intermediate state and control variables on the interval $[t^k, t^{k+1}]$. In such representatation the state uniqueness is guaranteed see [hager]. 
+ Where the vectors $y^j$ and $u^{kj}$ are intermediate state and control variables on the interval $[t^k, t^{k+1}]$. The state uniqueness is guaranteed see [hager]. 
  
  
  
 
-
+\newpage
 \subsection{The gradient evaluation}
-Provided the discrete OPC (\ref{opcmd})  the corresponding  optimality system  is given by
+Provided the discrete OPC (\ref{discrete_cost} - \ref{discrete_equation_y}) the corresponding  optimality system  is given by
 
   \begin{align}
    \D
-    \quad X^{k+1}  = X^k + h\sum_{i=1}^{s}b_iF(y^{ki}, u^{ki}), \qquad X_0 = X(0),\\
- 	y^i = X^k + h\sum_{j=1}^{s}a_{ij}F(y^{kj}, u^{kj}),\\
- 	p^k = p^{k+1} + \sum_{i=1}^{s}\psi^{ki}, \qquad p^n = - \nabla_xC(X^n),\\
- 	\psi^{ki} = (\nabla_x F(y^{ki}, u^{ki}))^{T} \left( p^{k+1} + \sum_{j=1}^{s} \frac{a_{ji}}{b_i}\psi^{kj}\right), 
-   \label{opsystem}
+    & X^{k+1}  = X^k + h\sum_{i=1}^{s}b_iF(y^{ki}, u^{ki}), \qquad X_0 = X(0),   \label{os_state_x}\\
+ 	& y^{ki} = X^k + h\sum_{j=1}^{s}a_{ij}F(y^{kj}, u^{kj}),   \label{os_state_y}\\
+ 	& p^k = p^{k+1} + \sum_{i=1}^{s}\psi^{ki}, \qquad p^n = - \nabla_xC(X^n),  \label{os_adjoint_p}\\
+ 	& \psi^{ki} = (\nabla_x F(y^{ki}, u^{ki}))^{T} \left( p^{k+1} + \sum_{j=1}^{s} \frac{a_{ji}}{b_i}\psi^{kj}\right), \label{os_adjoint_psi} 
    \end{align}
 
-The first order system (\ref{opsystem}) provides a convenient way to compute the gradient of the discrete cost functional in (\ref{opcmd})
+The first order discrete system (\ref{os_state_x} - \ref{os_adjoint_psi}) provides a convenient way to compute the exact gradient of the discrete cost functional (\ref{discrete_cost})
 \begin{equation}
 \nabla_{u^{ki}} C(u) = - (\nabla_u F(y^{ki}, u^{ki}))^{T} \left( p^{k+1} + \sum_{j=1}^{s}\frac{a_{ji}}{b_i}\psi^{kj}\right), 
 \label{discretegradient}
  \end{equation}  
- for $1\leq i, j\leq s$, and $0\leq k\leq n-1$.
- The well-posedness of the optimal control problem (\ref{opsystem}) and error estimates in the discrete approximation are present in [hager].
+ for $1\leq i, j\leq s$, and $0\leq k\leq n-1$, where the intermediate values for the discrete state and adjoint variables are obtained by first
+ solving the discrete state equations (\ref{os_state_x} - \ref{os_state_y}) for $k=0, 1, \dots, n-1$, using the given values for the controls, and then using these computed values for both the state and intermediate variables in (\ref{os_adjoint_p} - \ref{os_adjoint_psi}) when computing the values of the discrete adjoint variable for $k=n-1, n-2, \dots, 0$. Thus the discrete state equation is solved by marching forward from 
+ $ k = 0$ while the discrete adjoint equation is solved by marching backwards from $k = n-1$.
+ 
+ The well-posedness of the optimal control problem (\ref{os_state_x} - \ref{os_adjoint_psi}) and error estimates in the discrete approximation are present in [hager].
  
 
 
@@ -272,8 +273,8 @@ The first order system (\ref{opsystem}) provides a convenient way to compute the
   
  \begin{enumerate}
    \item Partition time interval $[0, T]$ into time windows $\Delta T$: $0 = T_0, T_1, \dots, T_m = T$.
-   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the problem (\ref{opcmd}) using the NCG scheme (\ref{ncgscheme}) with the gradient as in (\ref{discretegradient}), for the initial conditions $(x^{l-1n}_p, v^{l-1 n}_p)$, if $l = 0$, take $(x_{0p}, v_{0p})$.
-   \item From the solution of (\ref{opcmd})  retrieve the discrete state for the agent $p$ in the window $l$ $(x^{lk}_p, v^{lk}_p)$ and control $u^{lk}_p$, $k = 1, \dots, n$.
+   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the problem (\ref{discrete_cost} - \ref{discrete_equation_y}) using the NCG scheme (\ref{ncgscheme}) with the gradient as in (\ref{discretegradient}), for the initial conditions $(x^{l-1n}_p, v^{l-1 n}_p)$, if $l = 0$, take $(x_{0p}, v_{0p})$.
+   \item From the solution of (\ref{discrete_cost} - \ref{discrete_equation_y})  retrieve the discrete state for the agent $p$ in the window $l$ $(x^{lk}_p, v^{lk}_p)$ and control $u^{lk}_p$, $k = 1, \dots, n$.
    \item Repeat the steps 2-3 until the solutions for all windows are obtained.
  \end{enumerate}
  

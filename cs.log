@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  29 OCT 2016 18:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  30 OCT 2016 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,7 +307,7 @@ Overfull \hbox (0.74628pt too wide) in paragraph at lines 153--153
  []
 
 
-Overfull \hbox (6.08781pt too wide) in paragraph at lines 164--171
+Overfull \hbox (6.08781pt too wide) in paragraph at lines 162--169
 \OT1/cmr/m/n/10 where the con-trol $\OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 \OML/
 cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 /cmm/m/it/10 ; \U/msb/m/n/10 R[]\OT1/cmr/m/n/10 )$, the state $\OML/cmm/m/it/10
@@ -326,7 +326,7 @@ df>
 (epstopdf)                    size: 56683 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40ev-ep
 s-converted-to.pdf figures/V5aT=20ndT=40ev.eps>
-(epstopdf)             \includegraphics on input line 313.
+(epstopdf)             \includegraphics on input line 314.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40ev-eps-converted-to.pdf, id=34, 421.575pt x 316.18124pt>
@@ -334,7 +334,7 @@ File: figures/V5aT=20ndT=40ev-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40ev-eps-converted-to.pdf used on i
-nput line 313.
+nput line 314.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 Package epstopdf Info: Source file: <figures/V5aT=20ndT=40g.eps>
 (epstopdf)                    date: 2016-10-29 16:47:14
@@ -345,7 +345,7 @@ f>
 (epstopdf)                    size: 5866 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40g-eps
 -converted-to.pdf figures/V5aT=20ndT=40g.eps>
-(epstopdf)             \includegraphics on input line 319.
+(epstopdf)             \includegraphics on input line 320.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40g-eps-converted-to.pdf, id=35, 421.575pt x 316.18124pt>
@@ -353,10 +353,10 @@ File: figures/V5aT=20ndT=40g-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40g-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40g-eps-converted-to.pdf used on in
-put line 319.
+put line 320.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 
-Overfull \hbox (71.22643pt too wide) in paragraph at lines 312--323
+Overfull \hbox (71.22643pt too wide) in paragraph at lines 313--324
 [][]  [] 
  []
 
@@ -369,7 +369,7 @@ df>
 (epstopdf)                    size: 10152 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40lf-ep
 s-converted-to.pdf figures/V5aT=20ndT=40lf.eps>
-(epstopdf)             \includegraphics on input line 328.
+(epstopdf)             \includegraphics on input line 329.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/V5aT=20ndT=40lf-eps-converted-to.pdf, id=36, 421.575pt x 316.18124pt>
@@ -377,26 +377,27 @@ File: figures/V5aT=20ndT=40lf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40lf-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40lf-eps-converted-to.pdf used on i
-nput line 328.
+nput line 329.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
- [6 <./figures/V5aT=20ndT=40ev-eps-converted-to.pdf> <./figures/V5aT=20ndT=40g-
-eps-converted-to.pdf>]
-Overfull \hbox (3.52264pt too wide) in paragraph at lines 334--338
+ [6]
+Overfull \hbox (3.52264pt too wide) in paragraph at lines 335--339
 \OT1/cmr/m/n/10 through-out the the evo-lu-tion of the sys-tem with its ter-mi-
 nal value $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]; v[]\OT1/cmr
 /m/n/10 ) =
  []
 
-[7 <./figures/V5aT=20ndT=40lf-eps-converted-to.pdf>] (./cs.aux)
+[7 <./figures/V5aT=20ndT=40ev-eps-converted-to.pdf> <./figures/V5aT=20ndT=40g-e
+ps-converted-to.pdf> <./figures/V5aT=20ndT=40lf-eps-converted-to.pdf>]
+(./cs.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3968 strings out of 493315
- 57704 string characters out of 6145893
- 126101 words of memory out of 5000000
- 7370 multiletter control sequences out of 15000+600000
+ 3974 strings out of 493315
+ 57824 string characters out of 6145893
+ 125154 words of memory out of 5000000
+ 7376 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  44i,15n,42p,769b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -413,7 +414,7 @@ b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on cs.pdf (7 pages, 258189 bytes).
+Output written on cs.pdf (7 pages, 259283 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
