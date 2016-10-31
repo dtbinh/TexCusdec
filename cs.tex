@@ -117,7 +117,7 @@ In [jadbabaieflocking while preserving connectivity] a distributed control law, 
 u_i = \bar{v}_i - v_i - \sum_{j \in \mathcal{N}_i(t)}\nabla_{x_i}V(\|x_i - x_j\|).
 \label{controljad}
 \end{equation}
-where $\bar{v}_i = \sum_{j \in \mathcal{N}_i(t)} v_j$, and $V$ is an artificial potential function  as was used in [jadbabai] to maintain the connectivity of the initial interaction graph $\mathcal{G}(0)$ 
+where $\bar{v}_i = \sum_{j \in \mathcal{N}_i(t)} v_j$, and $V$ is an artificial potential function  to maintain the connectivity of the initial interaction graph $\mathcal{G}(0)$ 
 \begin{equation}
  V(r) = \frac{1}{r^2} + \frac{1}{R^2 - r^2}, \qquad 0 < r < R.
 \label{potential}
@@ -128,37 +128,57 @@ This potential not only allows for maintaining links in the network but also for
 We would like to design a decentralized control strategy with the same aims as (\ref{controljad}) but such that it is optimal in some sense. 
 For this we consider minimizing the following objective functional 
 \begin{equation}
-J(x, v) = \int_{0}^{T}B(v(t), v(t)) + B(v(T), v(T)) + \int_{0}^{T}\sum_{p\in \mathcal{I}}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
+J(x, v) = B(v(T), v(T)) + \int_{0}^{T}\sum_{p\in \mathcal{I}}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
 \label{Vt}
 \end{equation}
-where $B(v, v)$ as defined in (\ref{b})  stands for the velocity deviations throughout the systems' evolution, the term 
-$B(v(T), v(t))$ accentuates the importance of consensus emergence at the terminal observation, and $\bar{V}$ is a potential that measures the relative distance between agents, which we would like to minimize
+where $B(v(T), v(T))$ stands for the consensus emergence at the terminal observation, and $\bar{V}$ is a potential that measures the relative distance between agents, which we would like to minimize
 \begin{equation}
 \bar{V}(r) = (R/N- r)^2, \qquad 0 < r.
 \label{potentialbar}
 \end{equation}
-The idea of this potential is to increase the force with which the agents are pulled together as number of the agents increases, which would provide the increased connectivity at of the network at the terminal configuration. Note, that we can not use the same potential as in (\ref{potential}) because the functional $J$ will not be coercive.
-
-
-
+The idea of this potential is to increase the force with which the agents are pulled together as number of the agents increases, which would provide the increased connectivity of the network at the terminal configuration. Note, that we can not use the same potential as in (\ref{potential}) because the functional $J$ will not be coercive.
 
 
 
 The decentralization strategy consists in decomposing the state domain in sub-domains $\bar{\mathcal{N}}_p(t)$ for every $p\in \mathcal{I}$ where an optimal control problem is solved independently to obtain the suitable decentralized control for agent $p$. Such decentralization has already been utilized for first order systems in [jadbabai decentralized control of connectivity].
+The algorithm adopts the model predictive control approach by partitioning the time interval $[0, T]$ into $m$ time windows where subsequently solving an optimal control problem for each agent $p$.
 
- The algorithm adopts the model predictive control approach by partitioning the time interval $[0, T]$ into $m$ time windows of width $\Delta T$: $0 = T_0, T_1, T_2, \dots, T_m = T$ and for each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ for each agent $p$, $p = 1, \dots, N$  solving the following optimal control problem
-\begin{equation}
- \min_{x, v} J_p(x, v) = \int_{T_{l-1}}^{T_l}B(v(t), v(t)) + B(v(T_l), v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
-\label{opci}
-\end{equation}
-subject to (\ref{csm}) where $\mathcal{I} = \bar{\mathcal{N}}_p(T_l)$,  $N = N_p:= \# \bar{\mathcal{N}}_p(T_l)$, with initial conditions taken as endpoints form the solution on the previous time window $l-1$.
-Therefore, at each time window $l$ we obtain for each agent $p$ a suitable decentralized control $u_p(\mathcal{N}_p(T_l))$ which only depends on its neighbours in the time window $l$.
+
+
+
+
+
+
+ \subsection{The decentralized MPC strategy}
+ 
+ The general idea of model predictive control is that future control inputs and future state are predicted using the system model and optimized at regular intervals. For
+ the time interval $[0, T]$ where the evolution of system (\ref{csm}) is considered. 
+ The time interval is partitioned into $m\in \mathbb{N}$ uniform time windows $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$, $T_0 = 0, \dots, T_m = T$  of length  $\Delta T = T/m$. The genereal MPC strategy starts at zero time and solves the open-loop control problem defined in the interval $[T_0, T_1]$. Then, with response  resulting at time $T_1$ we have the initial condition for the subsequent optimization problem defined in the interval $[T_1, T_2]$. This procedure is repeated by receding the time horizon until the last window is reached. We implement the MPC scheme where the time horizon used to evaluate the control coincides with the time horizon where the control is used.
+ 
+ The decentralization comes with state domain decomposition on each time window $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$  of the MPC scheme where for each agent $p$, $p = 1, \dots, N$ we solve an optimal control problem for a state domain $\bar{\mathcal{N}}_p(T_{l-1})$ of the following form
+  \begin{equation}
+  \min_{x, v} J_p(x, v) = B(v(T_l), v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(T_{l-1})} \bar{V}(\|x_p(t) - x_j(t)\|),
+ \label{opci}
+ \end{equation}
+ subject to (\ref{csm}) where $\mathcal{I} = \bar{\mathcal{N}}_p(T_l)$,  $N = N_p:= \# \bar{\mathcal{N}}_p(T_l)$, with initial conditions $(x(T_{l-1}), v(T_{l-1}))$ taken as endpoints form the solution on the previous time window $l-1$.
+ Therefore, at each time window $l$ for each agent $p$ we obtain a suitable decentralized control $u_p(\mathcal{N}_p(T_l))$ which only depends on its neighbours in the time window $l$.
+We assume the neighbourhood of agent $p$ does not change during evolution in time window $l$.
+
+   The algorithm reads as the following: given the system (\ref{csm}):
+   \begin{enumerate}
+   \item Partition time interval $[0, T]$ into time windows $\Delta T$: $0 = T_0, T_1, \dots, T_m = T$.
+   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the OPC (\ref{opci}) with constrains (\ref{csm}) for the initial conditions $(x(T_{l-1}), v(T_{l-1}))$.
+   \item From the solution of (\ref{opci}), (\ref{csm})  retrieve the  state for the agent $p$ in the time window $l$ $(x_p(t), v_p(t))$ and control $u_p(t)$, $t\in [T_{l-1}, T_{l}]$.
+   \item Repeat the steps 2-3 until the solutions for all windows are obtained. 
+ \end{enumerate}
+ 
+
+
+
  
  
  \section{The optimal contro problem and its discretization}
-
- 
- We represent the optimal control problem (\ref{opci}) for the agent $p$ on a time window $[T_{l-1}, T_{l}]$ in Mayer form.
+  We represent the optimal control problem  (\ref{opci}), (\ref{csm}) for agent $p$ on time window $[T_{l-1}, T_{l}]$ in Mayer form.
   
  \begin{align}
  \D
@@ -172,9 +192,9 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  $v(t) = (v_{i_1}(t), \dots, v_{i_{N_p}}(t))$, $\{i_1, \dots, i_{N_p}\} \in \bar{\mathcal{N}}_p(T_l)$, 
  and $z(t)$ is an auxiliary component 
  $$
- z(t) = B(v(t), v(t)) + \sum_{j\in \mathcal{N}_p(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
+ z(t) =  \sum_{j\in \mathcal{N}_p(T_{l-1})} \bar{V}(\|x_p(t) - x_j(t)\|),
  $$
- with the initial condition $z(0) = 0$, and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
+ with the initial condition $z(0) = 0$ and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
  $$
  F(X(t), u(t)) =
   \left( 
@@ -185,19 +205,20 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  \end{array} 
  \right), 
  $$
- where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_l)}$ which depends on $x$.
+ where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_{l-1})}$ which depends on $x$.
  For the functional $C$ to correspond to the problem in its original form it is chosen 
  $$
  C(X(T_l)) = z(T_l) + B(v(T_l), v(T_l)).
  $$
  
-  Note, since our problem is autonomous and all time windows are of the same width without loss of generality
+  Note, since our problem is autonomous and all time windows are of the same width, without loss of generality
  we can transform the problem on time interval $[0, \Delta T]$. 
  
  
   
-  Given the problem (\ref{compact_cost} - \ref{compact_equation}) we discretize it with a third-order Runge-Kutta scheme. Such scheme for differential equations  must satisfy an additional condition to achieve third-order accuracy
-  for optimal control problems. For the third-order Runge-Kutta scheme, the discrete controls often converge to the continuous solution slower than the discrete state and adjoint variables at the grid points. Here, we utilise a better approximation to the continuous optimal control obtained from a posteriori computation involving the computed discrete state and adjoint variables  developed in [hager]. 
+  Given the problem (\ref{compact_cost} - \ref{compact_equation}) we discretize it with a third-order Runge-Kutta scheme.  For such scheme, the discrete controls often converge to the continuous solution slower than the discrete state and adjoint variables at the grid points. It  must satisfy an additional condition to achieve third-order accuracy
+    for optimal control problems. Here, we utilise a better approximation to the continuous optimal control obtained from a posteriori computation involving the computed discrete state and adjoint variables  developed in [hager]. 
+    
   Consider a uniform time mesh and the following time-step size
  \begin{equation}
    h = \frac{\Delta T}{n},
@@ -220,7 +241,7 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
   \end{align}
  
  for $1\leq i, j\leq s$, and $0\leq k\leq n-1$.
- Where the vectors $y^j$ and $u^{kj}$ are intermediate state and control variables on the interval $[t^k, t^{k+1}]$. The state uniqueness is guaranteed see [hager]. 
+ Where the vectors $y^kj$ and $u^{kj}$ are intermediate state and control variables on the interval $[t^k, t^{k+1}]$. The state uniqueness is guaranteed in [hager]. 
  
  
  
@@ -272,16 +293,6 @@ The first order discrete system (\ref{os_state_x} - \ref{os_adjoint_psi}) provid
   This scheme satisfies the decent condition $\|\nabla_u C(u)\|d^{(k)} \leq -\frac{7}{8}\|\nabla_u C(u)\|^2$. Our choice is motivated by our numerical experiments. In fact, the Hager-Zhang NCG scheme results to be the most efficient among the known formulas. 
   
   
- 
- \subsection{The decentralized MPC strategy}
-  The algorithm reads the following: given the system (\ref{csm}):
-  
- \begin{enumerate}
-   \item Partition time interval $[0, T]$ into time windows $\Delta T$: $0 = T_0, T_1, \dots, T_m = T$.
-   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the problem (\ref{discrete_cost} - \ref{discrete_equation_y}) using the NCG scheme (\ref{ncgscheme}) with the gradient as in (\ref{discretegradient}), for the initial conditions $(x^{l-1n}_p, v^{l-1 n}_p)$, if $l = 0$, take $(x_{0p}, v_{0p})$.
-   \item From the solution of (\ref{discrete_cost} - \ref{discrete_equation_y})  retrieve the discrete state for the agent $p$ in the window $l$ $(x^{lk}_p, v^{lk}_p)$ and control $u^{lk}_p$, $k = 1, \dots, n$.
-   \item Repeat the steps 2-3 until the solutions for all windows are obtained.
- \end{enumerate}
  
  
  

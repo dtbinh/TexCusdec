@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  31 OCT 2016 10:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  31 OCT 2016 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -279,34 +279,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (7.48047pt too wide) in paragraph at lines 149--150
-\OT1/cmr/m/n/10 the time in-ter-val $[0\OML/cmm/m/it/10 ; T\OT1/cmr/m/n/10 ]$ i
-nto $\OML/cmm/m/it/10 m$ \OT1/cmr/m/n/10 time win-dows of width $^^A\OML/cmm/m/
-it/10 T$\OT1/cmr/m/n/10 : $0 = \OML/cmm/m/it/10 T[]; T[]; T[]; [] ; T[] \OT1/cm
-r/m/n/10 =
- []
-
-
-Overfull \hbox (11.68916pt too wide) detected at line 153
-[] \OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; v\OT1/cmr/m/n/10 ) 
-= [][] \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 (\O
-ML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; v\OT1/cmr/m/n/10 (\OML/cmm/
-m/it/10 t\OT1/cmr/m/n/10 )) + \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 v\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; v\
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )) + [][] [] [](\OMS/cmsy/m
-/n/10 k\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )
- \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\O
-T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
- []
-
-
-Overfull \hbox (0.74628pt too wide) in paragraph at lines 158--158
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Overfull \hbox (0.74628pt too wide) in paragraph at lines 180--180
 []\OT1/cmr/bx/n/14.4 The op-ti-mal con-tro prob-lem and its dis-cretiza-
  []
 
 
-Overfull \hbox (6.08781pt too wide) in paragraph at lines 167--174
+Overfull \hbox (6.08781pt too wide) in paragraph at lines 187--194
 \OT1/cmr/m/n/10 where the con-trol $\OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 \OML/
 cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 /cmm/m/it/10 ; \U/msb/m/n/10 R[]\OT1/cmr/m/n/10 )$, the state $\OML/cmm/m/it/10
@@ -315,7 +294,7 @@ cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 B
  []
 
-[3] [4] [5]
+[4] [5] [6]
 Package epstopdf Info: Source file: <figures/V5aT=20ndT=40ev.eps>
 (epstopdf)                    date: 2016-10-29 16:47:02
 (epstopdf)                    size: 164101 bytes
@@ -325,15 +304,15 @@ df>
 (epstopdf)                    size: 56683 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40ev-ep
 s-converted-to.pdf figures/V5aT=20ndT=40ev.eps>
-(epstopdf)             \includegraphics on input line 319.
+(epstopdf)             \includegraphics on input line 330.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/V5aT=20ndT=40ev-eps-converted-to.pdf, id=34, 421.575pt x 316.18124pt>
+<figures/V5aT=20ndT=40ev-eps-converted-to.pdf, id=37, 421.575pt x 316.18124pt>
 File: figures/V5aT=20ndT=40ev-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40ev-eps-converted-to.pdf used on i
-nput line 319.
+nput line 330.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 Package epstopdf Info: Source file: <figures/V5aT=20ndT=40g.eps>
 (epstopdf)                    date: 2016-10-29 16:47:14
@@ -344,18 +323,18 @@ f>
 (epstopdf)                    size: 5866 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40g-eps
 -converted-to.pdf figures/V5aT=20ndT=40g.eps>
-(epstopdf)             \includegraphics on input line 325.
+(epstopdf)             \includegraphics on input line 336.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/V5aT=20ndT=40g-eps-converted-to.pdf, id=35, 421.575pt x 316.18124pt>
+<figures/V5aT=20ndT=40g-eps-converted-to.pdf, id=38, 421.575pt x 316.18124pt>
 File: figures/V5aT=20ndT=40g-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40g-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40g-eps-converted-to.pdf used on in
-put line 325.
+put line 336.
 (pdftex.def)             Requested size: 207.0021pt x 155.2534pt.
 
-Overfull \hbox (71.22643pt too wide) in paragraph at lines 318--329
+Overfull \hbox (71.22643pt too wide) in paragraph at lines 329--340
 [][]  [] 
  []
 
@@ -368,26 +347,25 @@ df>
 (epstopdf)                    size: 10152 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/V5aT=20ndT=40lf-ep
 s-converted-to.pdf figures/V5aT=20ndT=40lf.eps>
-(epstopdf)             \includegraphics on input line 334.
+(epstopdf)             \includegraphics on input line 345.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/V5aT=20ndT=40lf-eps-converted-to.pdf, id=36, 421.575pt x 316.18124pt>
+<figures/V5aT=20ndT=40lf-eps-converted-to.pdf, id=39, 421.575pt x 316.18124pt>
 File: figures/V5aT=20ndT=40lf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/V5aT=20ndT=40lf-eps-converted-to.pdf>
 Package pdftex.def Info: figures/V5aT=20ndT=40lf-eps-converted-to.pdf used on i
-nput line 334.
+nput line 345.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
- [6]
-Overfull \hbox (3.52264pt too wide) in paragraph at lines 340--344
+ [7 <./figures/V5aT=20ndT=40ev-eps-converted-to.pdf> <./figures/V5aT=20ndT=40g-
+eps-converted-to.pdf>]
+Overfull \hbox (3.52264pt too wide) in paragraph at lines 351--355
 \OT1/cmr/m/n/10 through-out the the evo-lu-tion of the sys-tem with its ter-mi-
 nal value $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]; v[]\OT1/cmr
 /m/n/10 ) =
  []
 
-[7 <./figures/V5aT=20ndT=40ev-eps-converted-to.pdf> <./figures/V5aT=20ndT=40g-e
-ps-converted-to.pdf> <./figures/V5aT=20ndT=40lf-eps-converted-to.pdf>]
-(./cs.aux)
+[8 <./figures/V5aT=20ndT=40lf-eps-converted-to.pdf>] (./cs.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -413,10 +391,10 @@ b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on cs.pdf (7 pages, 259814 bytes).
+Output written on cs.pdf (8 pages, 260850 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
