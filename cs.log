@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  31 OCT 2016 21:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  3 NOV 2016 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -279,13 +279,30 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (0.74628pt too wide) in paragraph at lines 179--179
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (12.88663pt too wide) in paragraph at lines 161--164
+\OT1/cmr/m/n/10 for $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 N[]\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )$, where $\OML/cmm/m/it/10 N[] \OT1/cmr/m/
+n/10 := #[](\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )$, with ini-tial con-di-tions 
+$(\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )\OML/
+cmm/m/it/10 ; v\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 ))$
+ []
+
+[3]
+Overfull \hbox (2.23302pt too wide) in paragraph at lines 182--183
+\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; [] ; N$ \OT1/cmr/m/n/10 solve the OPC (7[])
+ - (8[]) for the ini-tial con-di-tions $(\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OM
+L/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; v\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 T[]\OT1/cmr/m/n/10 ))$. 
+ []
+
+
+Overfull \hbox (0.74628pt too wide) in paragraph at lines 192--192
 []\OT1/cmr/bx/n/14.4 The op-ti-mal con-tro prob-lem and its dis-cretiza-
  []
 
 
-Overfull \hbox (6.08781pt too wide) in paragraph at lines 186--193
+Overfull \hbox (6.08781pt too wide) in paragraph at lines 199--206
 \OT1/cmr/m/n/10 where the con-trol $\OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 \OML/
 cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 /cmm/m/it/10 ; \U/msb/m/n/10 R[]\OT1/cmr/m/n/10 )$, the state $\OML/cmm/m/it/10
@@ -294,121 +311,190 @@ cmm/m/it/10 L[]\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 T[]; T[]\OT1/cmr/m/n/10 ]\OML
 B
  []
 
-[4] [5] [6] [7]
-Package epstopdf Info: Source file: <figures/a5D_L+V_fine_mesh_NICE_ev.eps>
-(epstopdf)                    date: 2016-10-31 18:22:34
-(epstopdf)                    size: 66047 bytes
-(epstopdf)             Output file: <figures/a5D_L+V_fine_mesh_NICE_ev-eps-conv
-erted-to.pdf>
-(epstopdf)                    date: 2016-10-31 18:47:48
-(epstopdf)                    size: 23254 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/a5D_L+V_fine_mesh_
-NICE_ev-eps-converted-to.pdf figures/a5D_L+V_fine_mesh_NICE_ev.eps>
-(epstopdf)             \includegraphics on input line 329.
-Package epstopdf Info: Output file is already uptodate.
-
-<figures/a5D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf, id=41, 421.575pt x 316
-.18124pt>
-File: figures/a5D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf Graphic file (type
- pdf)
- <use figures/a5D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf>
-Package pdftex.def Info: figures/a5D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf
- used on input line 329.
-(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
-Package epstopdf Info: Source file: <figures/a5D_L+V_fine_mesh_NICE_g.eps>
-(epstopdf)                    date: 2016-10-31 18:22:17
-(epstopdf)                    size: 33418 bytes
-(epstopdf)             Output file: <figures/a5D_L+V_fine_mesh_NICE_g-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2016-10-31 18:47:49
-(epstopdf)                    size: 5805 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/a5D_L+V_fine_mesh_
-NICE_g-eps-converted-to.pdf figures/a5D_L+V_fine_mesh_NICE_g.eps>
-(epstopdf)             \includegraphics on input line 335.
-Package epstopdf Info: Output file is already uptodate.
-
-<figures/a5D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf, id=42, 421.575pt x 316.
-18124pt>
-File: figures/a5D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf Graphic file (type 
-pdf)
- <use figures/a5D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf>
-Package pdftex.def Info: figures/a5D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf 
-used on input line 335.
-(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 328--339
-[][]  [] 
- []
-
-Package epstopdf Info: Source file: <figures/a5D_L+V_fine_mesh_NICE_cg0.eps>
-(epstopdf)                    date: 2016-10-31 18:21:43
-(epstopdf)                    size: 25133 bytes
-(epstopdf)             Output file: <figures/a5D_L+V_fine_mesh_NICE_cg0-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2016-10-31 18:47:49
-(epstopdf)                    size: 23076 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/a5D_L+V_fine_mesh_
-NICE_cg0-eps-converted-to.pdf figures/a5D_L+V_fine_mesh_NICE_cg0.eps>
+[4] [5] [6]
+Package epstopdf Info: Source file: <figures/a5_D_ev.eps>
+(epstopdf)                    date: 2016-11-02 20:35:30
+(epstopdf)                    size: 47602 bytes
+(epstopdf)             Output file: <figures/a5_D_ev-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:41:59
+(epstopdf)                    size: 16311 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_ev-eps-conver
+ted-to.pdf figures/a5_D_ev.eps>
 (epstopdf)             \includegraphics on input line 343.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a5D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf, id=43, 421.575pt x 31
-6.18124pt>
-File: figures/a5D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf Graphic file (typ
-e pdf)
- <use figures/a5D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf>
-Package pdftex.def Info: figures/a5D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pd
-f used on input line 343.
+<figures/a5_D_ev-eps-converted-to.pdf, id=37, 421.575pt x 316.18124pt>
+File: figures/a5_D_ev-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_ev-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_ev-eps-converted-to.pdf used on input lin
+e 343.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
-Package epstopdf Info: Source file: <figures/a5D_L+V_fine_mesh_NICE_cgT.eps>
-(epstopdf)                    date: 2016-10-31 18:22:03
-(epstopdf)                    size: 31197 bytes
-(epstopdf)             Output file: <figures/a5D_L+V_fine_mesh_NICE_cgT-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2016-10-31 18:47:49
-(epstopdf)                    size: 28072 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/a5D_L+V_fine_mesh_
-NICE_cgT-eps-converted-to.pdf figures/a5D_L+V_fine_mesh_NICE_cgT.eps>
+Package epstopdf Info: Source file: <figures/a5_D_g.eps>
+(epstopdf)                    date: 2016-11-02 20:35:45
+(epstopdf)                    size: 35187 bytes
+(epstopdf)             Output file: <figures/a5_D_g-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:41:59
+(epstopdf)                    size: 5828 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_g-eps-convert
+ed-to.pdf figures/a5_D_g.eps>
 (epstopdf)             \includegraphics on input line 349.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a5D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf, id=44, 421.575pt x 31
-6.18124pt>
-File: figures/a5D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf Graphic file (typ
-e pdf)
- <use figures/a5D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf>
-Package pdftex.def Info: figures/a5D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pd
-f used on input line 349.
+<figures/a5_D_g-eps-converted-to.pdf, id=38, 421.575pt x 316.18124pt>
+File: figures/a5_D_g-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_g-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_g-eps-converted-to.pdf used on input line
+ 349.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 342--353
 [][]  [] 
  []
 
-Package epstopdf Info: Source file: <figures/a5D_L+V_fine_mesh_NICE_lv.eps>
-(epstopdf)                    date: 2016-10-31 18:21:26
-(epstopdf)                    size: 22602 bytes
-(epstopdf)             Output file: <figures/a5D_L+V_fine_mesh_NICE_lv-eps-conv
-erted-to.pdf>
-(epstopdf)                    date: 2016-10-31 18:47:50
-(epstopdf)                    size: 5208 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/a5D_L+V_fine_mesh_
-NICE_lv-eps-converted-to.pdf figures/a5D_L+V_fine_mesh_NICE_lv.eps>
-(epstopdf)             \includegraphics on input line 358.
+Package epstopdf Info: Source file: <figures/a5_D_cg0.eps>
+(epstopdf)                    date: 2016-11-02 20:36:40
+(epstopdf)                    size: 15009 bytes
+(epstopdf)             Output file: <figures/a5_D_cg0-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:41:59
+(epstopdf)                    size: 15451 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_cg0-eps-conve
+rted-to.pdf figures/a5_D_cg0.eps>
+(epstopdf)             \includegraphics on input line 357.
+Package epstopdf Info: Output file is already uptodate.
+<figures/a5_D_cg0-eps-converted-to.pdf, id=39, 447.6725pt x 331.2375pt>
+File: figures/a5_D_cg0-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_cg0-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_cg0-eps-converted-to.pdf used on input li
+ne 357.
+(pdftex.def)             Requested size: 172.5pt x 127.63548pt.
+Package epstopdf Info: Source file: <figures/a5_D_cgT.eps>
+(epstopdf)                    date: 2016-11-02 20:36:20
+(epstopdf)                    size: 21368 bytes
+(epstopdf)             Output file: <figures/a5_D_cgT-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:00
+(epstopdf)                    size: 20534 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_cgT-eps-conve
+rted-to.pdf figures/a5_D_cgT.eps>
+(epstopdf)             \includegraphics on input line 363.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a5D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf, id=45, 421.575pt x 316
-.18124pt>
-File: figures/a5D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf Graphic file (type
- pdf)
- <use figures/a5D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf>
-Package pdftex.def Info: figures/a5D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf
- used on input line 358.
+<figures/a5_D_cgT-eps-converted-to.pdf, id=40, 446.66875pt x 330.23375pt>
+File: figures/a5_D_cgT-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_cgT-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_cgT-eps-converted-to.pdf used on input li
+ne 363.
+(pdftex.def)             Requested size: 172.5pt x 127.53593pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 356--367
+[][]  [] 
+ []
+
+Package epstopdf Info: Source file: <figures/a5_D_lf.eps>
+(epstopdf)                    date: 2016-11-02 20:34:59
+(epstopdf)                    size: 19800 bytes
+(epstopdf)             Output file: <figures/a5_D_lf-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:31
+(epstopdf)                    size: 5260 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_lf-eps-conver
+ted-to.pdf figures/a5_D_lf.eps>
+(epstopdf)             \includegraphics on input line 372.
+Package epstopdf Info: Output file is already uptodate.
+<figures/a5_D_lf-eps-converted-to.pdf, id=41, 421.575pt x 316.18124pt>
+File: figures/a5_D_lf-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_lf-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_lf-eps-converted-to.pdf used on input lin
+e 372.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
- [8 <./figures/a5D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf> <./figures/a5D_L
-+V_fine_mesh_NICE_g-eps-converted-to.pdf>] [9 <./figures/a5D_L+V_fine_mesh_NICE
-_cg0-eps-converted-to.pdf> <./figures/a5D_L+V_fine_mesh_NICE_cgT-eps-converted-
-to.pdf> <./figures/a5D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf>]
+ [7 <./figures/a5_D_ev-eps-converted-to.pdf> <./figures/a5_D_g-eps-converted-to
+.pdf>]
+Package epstopdf Info: Source file: <figures/a5_C_ev.eps>
+(epstopdf)                    date: 2016-11-02 20:40:50
+(epstopdf)                    size: 28855 bytes
+(epstopdf)             Output file: <figures/a5_C_ev-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:00
+(epstopdf)                    size: 7327 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_C_ev-eps-conver
+ted-to.pdf figures/a5_C_ev.eps>
+(epstopdf)             \includegraphics on input line 384.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/a5_C_ev-eps-converted-to.pdf, id=56, 421.575pt x 316.18124pt>
+File: figures/a5_C_ev-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_C_ev-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_C_ev-eps-converted-to.pdf used on input lin
+e 384.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+Package epstopdf Info: Source file: <figures/a5_C_lf.eps>
+(epstopdf)                    date: 2016-11-02 20:40:50
+(epstopdf)                    size: 16636 bytes
+(epstopdf)             Output file: <figures/a5_C_lf-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:00
+(epstopdf)                    size: 4968 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_C_lf-eps-conver
+ted-to.pdf figures/a5_C_lf.eps>
+(epstopdf)             \includegraphics on input line 390.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/a5_C_lf-eps-converted-to.pdf, id=57, 421.575pt x 316.18124pt>
+File: figures/a5_C_lf-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_C_lf-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_C_lf-eps-converted-to.pdf used on input lin
+e 390.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 383--394
+[][]  [] 
+ []
+
+Package epstopdf Info: Source file: <figures/a5_C_c.eps>
+(epstopdf)                    date: 2016-11-02 20:40:50
+(epstopdf)                    size: 16484 bytes
+(epstopdf)             Output file: <figures/a5_C_c-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:01
+(epstopdf)                    size: 4652 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_C_c-eps-convert
+ed-to.pdf figures/a5_C_c.eps>
+(epstopdf)             \includegraphics on input line 399.
+Package epstopdf Info: Output file is already uptodate.
+<figures/a5_C_c-eps-converted-to.pdf, id=58, 421.575pt x 316.18124pt>
+File: figures/a5_C_c-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_C_c-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_C_c-eps-converted-to.pdf used on input line
+ 399.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+Package epstopdf Info: Source file: <figures/a5_D_c.eps>
+(epstopdf)                    date: 2016-11-02 20:35:54
+(epstopdf)                    size: 19118 bytes
+(epstopdf)             Output file: <figures/a5_D_c-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-02 20:42:01
+(epstopdf)                    size: 5128 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/a5_D_c-eps-convert
+ed-to.pdf figures/a5_D_c.eps>
+(epstopdf)             \includegraphics on input line 405.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/a5_D_c-eps-converted-to.pdf, id=59, 421.575pt x 316.18124pt>
+File: figures/a5_D_c-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/a5_D_c-eps-converted-to.pdf>
+Package pdftex.def Info: figures/a5_D_c-eps-converted-to.pdf used on input line
+ 405.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 398--409
+[][]  [] 
+ []
+
+[8 <./figures/a5_D_cg0-eps-converted-to.pdf> <./figures/a5_D_cgT-eps-converted-
+to.pdf> <./figures/a5_D_lf-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/a10D_L+V_fine_mesh_NICE_ev.eps>
 (epstopdf)                    date: 2016-10-31 15:11:22
 (epstopdf)                    size: 317206 bytes
@@ -418,16 +504,16 @@ verted-to.pdf>
 (epstopdf)                    size: 109185 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a10D_L+V_fine_mesh
 _NICE_ev-eps-converted-to.pdf figures/a10D_L+V_fine_mesh_NICE_ev.eps>
-(epstopdf)             \includegraphics on input line 373.
+(epstopdf)             \includegraphics on input line 423.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf, id=79, 421.575pt x 31
+<figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf, id=80, 421.575pt x 31
 6.18124pt>
 File: figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pd
-f used on input line 373.
+f used on input line 423.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 Package epstopdf Info: Source file: <figures/a10D_L+V_fine_mesh_NICE_g.eps>
 (epstopdf)                    date: 2016-10-31 15:11:56
@@ -438,19 +524,19 @@ erted-to.pdf>
 (epstopdf)                    size: 8015 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a10D_L+V_fine_mesh
 _NICE_g-eps-converted-to.pdf figures/a10D_L+V_fine_mesh_NICE_g.eps>
-(epstopdf)             \includegraphics on input line 379.
+(epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf, id=80, 421.575pt x 316
+<figures/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf, id=81, 421.575pt x 316
 .18124pt>
 File: figures/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf Graphic file (type
  pdf)
  <use figures/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf
- used on input line 379.
+ used on input line 429.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 372--383
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 422--433
 [][]  [] 
  []
 
@@ -463,16 +549,16 @@ nverted-to.pdf>
 (epstopdf)                    size: 12263 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a10D_L+V_fine_mesh
 _NICE_cg0-eps-converted-to.pdf figures/a10D_L+V_fine_mesh_NICE_cg0.eps>
-(epstopdf)             \includegraphics on input line 388.
+(epstopdf)             \includegraphics on input line 438.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a10D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf, id=81, 446.66875pt x
+<figures/a10D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf, id=82, 446.66875pt x
  330.23375pt>
 File: figures/a10D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use figures/a10D_L+V_fine_mesh_NICE_cg0-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a10D_L+V_fine_mesh_NICE_cg0-eps-converted-to.p
-df used on input line 388.
+df used on input line 438.
 (pdftex.def)             Requested size: 172.5pt x 127.53593pt.
 Package epstopdf Info: Source file: <figures/a10D_L+V_fine_mesh_NICE_cgT.eps>
 (epstopdf)                    date: 2016-10-31 15:18:09
@@ -483,19 +569,19 @@ nverted-to.pdf>
 (epstopdf)                    size: 46402 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a10D_L+V_fine_mesh
 _NICE_cgT-eps-converted-to.pdf figures/a10D_L+V_fine_mesh_NICE_cgT.eps>
-(epstopdf)             \includegraphics on input line 394.
+(epstopdf)             \includegraphics on input line 444.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf, id=82, 446.66875pt x
+<figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf, id=83, 446.66875pt x
  330.23375pt>
 File: figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-to.p
-df used on input line 394.
+df used on input line 444.
 (pdftex.def)             Requested size: 172.5pt x 127.53593pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 387--398
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 437--448
 [][]  [] 
  []
 
@@ -508,35 +594,37 @@ verted-to.pdf>
 (epstopdf)                    size: 14707 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a10D_L+V_fine_mesh
 _NICE_lv-eps-converted-to.pdf figures/a10D_L+V_fine_mesh_NICE_lv.eps>
-(epstopdf)             \includegraphics on input line 403.
+(epstopdf)             \includegraphics on input line 453.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf, id=83, 421.575pt x 31
+<figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf, id=84, 421.575pt x 31
 6.18124pt>
 File: figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pd
-f used on input line 403.
+f used on input line 453.
 (pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
 
-[10 <./figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf> <./figures/a10D
-_L+V_fine_mesh_NICE_g-eps-converted-to.pdf> <./figures/a10D_L+V_fine_mesh_NICE_
-cg0-eps-converted-to.pdf> <./figures/a10D_L+V_fine_mesh_NICE_cgT-eps-converted-
-to.pdf>] [11 <./figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf>]
+[9 <./figures/a5_C_ev-eps-converted-to.pdf> <./figures/a5_C_lf-eps-converted-to
+.pdf> <./figures/a5_C_c-eps-converted-to.pdf> <./figures/a5_D_c-eps-converted-t
+o.pdf>] [10 <./figures/a10D_L+V_fine_mesh_NICE_ev-eps-converted-to.pdf> <./figu
+res/a10D_L+V_fine_mesh_NICE_g-eps-converted-to.pdf> <./figures/a10D_L+V_fine_me
+sh_NICE_cg0-eps-converted-to.pdf> <./figures/a10D_L+V_fine_mesh_NICE_cgT-eps-co
+nverted-to.pdf> <./figures/a10D_L+V_fine_mesh_NICE_lv-eps-converted-to.pdf>]
 (./cs.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4017 strings out of 493315
- 59908 string characters out of 6145893
- 125225 words of memory out of 5000000
- 7412 multiletter control sequences out of 15000+600000
+ 4043 strings out of 493315
+ 60169 string characters out of 6145893
+ 125279 words of memory out of 5000000
+ 7434 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 44i,15n,42p,925b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,15n,42p,925b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
 /fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public
 /amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10
@@ -550,10 +638,10 @@ b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on cs.pdf (11 pages, 449777 bytes).
+Output written on cs.pdf (10 pages, 440931 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

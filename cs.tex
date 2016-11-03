@@ -124,25 +124,14 @@ where $\bar{v}_i = \sum_{j \in \mathcal{N}_i(t)} v_j$, and $V$ is an artificial 
 \end{equation}
 This potential not only allows for maintaining links in the network but also for avoiding collisions among the agents. 
 
-The drawback of the control (\ref{controljad}) is that it has an essential discontinuity as $r \longrightarrow R$ which on one hand guarantees network connection maintenance but on the other hand, as forces to break the network connectivity become stronger it requires increasingly fine mesh to be solved numerically, which renders it impractical for applications. We would like to design a decentralized control strategy with the same aims as (\ref{controljad}) but such that it avoids the continuity problem and is optimal in some sense. 
-For this we consider minimizing the following objective functional 
-\begin{equation}
-J(x, v) = B(v(T), v(T)) + \int_{0}^{T}\sum_{(p, j)\in \mathcal{E}(t)} \bar{V}(\|x_p(t) - x_j(t)\|),
-\label{Vt}
+We would like to design a control strategy with the same aims as (\ref{controljad}) such that it is optimal in some sense. For this we consider minimizing a functional 
+ \begin{equation}
+ \min_{x, v} J(x, v) = \int_{0}^{T}\frac{1}{N}\sum_{i=1}^{N}\|v_i(t) - \bar{v}(t)\|^2 dt + \frac{1}{N}\sum_{i=1}^{N}\|v_i(T) - \bar{v}(T)\|^2,
+\label{j}
 \end{equation}
-where $B(v(T), v(T))$ stands for the consensus emergence at the terminal observation, and $\bar{V}$ is a potential that measures the relative distance between agents, which we would like to minimize
-\begin{equation}
-\bar{V}(r) = (R/N- r)^2, \qquad 0 < r.
-\label{potentialbar}
-\end{equation}
-The idea of this potential is to increase the force with which the agents are pulled together as number of the agents increases, which would provide the increased connectivity of the network at the terminal configuration. Note, that we can not use the same potential as in (\ref{potential}) because the functional $J$ will not be coercive.
-
-
-
-The decentralization strategy consists in decomposing the state domain in sub-domains $\bar{\mathcal{N}}_p(t)$ for every $p\in \mathcal{I}$ where an optimal control problem is solved independently to obtain the suitable decentralized control for agent $p$. Such decentralization has already been utilized for first order systems in [jadbabai decentralized control of connectivity].
+subject to (\ref{csm}). The first term stands for the agents' velocity alignment throughout the evolution and the second one accentuates the consensus emergence at the terminal configuration. 
+To introduce decentralization we decompose the state domain in sub-domains $\bar{\mathcal{N}}_p(t)$ for every $p\in \mathcal{I}$ where an optimal control problem is solved independently to obtain the suitable decentralized control for agent $p$. Such decentralization has already been utilized for first order systems in [jadbabai decentralized control of connectivity].
 The algorithm adopts the model predictive control approach by partitioning the time interval $[0, T]$ into $m$ time windows where subsequently solving an optimal control problem for each agent $p$.
-
-
 
 
 
@@ -154,20 +143,44 @@ The algorithm adopts the model predictive control approach by partitioning the t
  the time interval $[0, T]$ where the evolution of system (\ref{csm}) is considered. 
  The time interval is partitioned into $m\in \mathbb{N}$ uniform time windows $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$, $T_0 = 0, \dots, T_m = T$  of length  $\Delta T = T/m$. The genereal MPC strategy starts at zero time and solves the open-loop control problem defined in the interval $[T_0, T_1]$. Then, with response  resulting at time $T_1$ we have the initial condition for the subsequent optimization problem defined in the interval $[T_1, T_2]$. This procedure is repeated by receding the time horizon until the last window is reached. We implement the MPC scheme where the time horizon used to evaluate the control coincides with the time horizon where the control is used.
  
- The decentralization comes with state domain decomposition on each time window $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$  of the MPC scheme where for each agent $p$, $p = 1, \dots, N$ we solve an optimal control problem for a state domain $\bar{\mathcal{N}}_p(T_{l-1})$ of the following form
+ 
+   The decentralization comes with state domain decomposition on each time window $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$  of the MPC scheme where for each agent $p$, $p = 1, \dots, N$ we solve an optimal control problem for a state domain $\bar{\mathcal{N}}_p(T_{l-1})$ where the information is exchanged only between agent $p$ and its neighbours and not between the neighbours themselves
+   \begin{equation}
+    \min_{x, v} J_p(x, v) = B_p(v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(T_{l-1})} \bar{V}(\|x_p(t) - x_j(t)\|),
+   \label{jp}
+   \end{equation}
+   subject to 
+   \begin{align}
+   \begin{cases}
+   \D
+   \dot{x_i} = v_i,\\
+   \dot{v_p} = \frac{1}{N_p}\sum_{j\in \mathcal{N}_p(T_{l-1})}a(\|x_i - x_j\|)(v_j - v_i) + u_p, \\
+   \dot{v_i} = \frac{1}{N_p}\sum_{j\in \mathcal{N}_p(T_{l-1})}a(\|x_i - x_j\|)(v_j - v_i),\\
+   \end{cases}
+   \label{csmp}
+   \end{align}
+  for $i\in\mathcal{N}_p(T_{l-1})$, where $N_p:= \# \bar{\mathcal{N}}_p(T_{l-1})$, with initial conditions $(x(T_{l-1}), v(T_{l-1}))$ taken as endpoints form the solution on the previous time window $l-1$.
+  The functional $B_p(v(t))$ has the following form 
   \begin{equation}
-  \min_{x, v} J_p(x, v) = B(v(T_l), v(T_l)) + \int_{T_{l-1}}^{T_l}\sum_{j\in \mathcal{N}_p(T_{l-1})} \bar{V}(\|x_p(t) - x_j(t)\|),
- \label{opci}
- \end{equation}
- subject to (\ref{csm}) where $\mathcal{I} = \bar{\mathcal{N}}_p(T_l)$,  $N = N_p:= \# \bar{\mathcal{N}}_p(T_l)$, with initial conditions $(x(T_{l-1}), v(T_{l-1}))$ taken as endpoints form the solution on the previous time window $l-1$.
- Therefore, at each time window $l$ for each agent $p$ we obtain a suitable decentralized control $u_p(\mathcal{N}_p(T_l))$ which only depends on its neighbours in the time window $l$.
-We assume the neighbourhood of agent $p$ does not change during evolution in time window $l$.
+  B_p(v) = \frac{1}{N_p}\sum_{j \in \mathcal{N}_p(t)} \| v_p - v_j \|,
+  \label{bp}
+  \end{equation}
+  it is chosen so that it makes the agent  $p$ to align its velocity to its neighbours while the second term in (\ref{csmp}) $\bar{V}$ is a potential that measures the relative distance between agents which we would like to minimize to maintain the network connectivity
+  \begin{equation}
+  \bar{V}(r) = (R/N- r)^2, \qquad 0 < r.
+  \label{potentialbar}
+  \end{equation}
+  The idea of this potential is to increase the force with which the agents are pulled together as number of the agents increases, which would provide the increased connectivity of the network at the terminal configuration. Note, that we can not use the same potential as in (\ref{potential}) because the functional $J$ will not be coercive.
+  
+ Given OPC (\ref{jp})-(\ref{csmp}), at each time window $l$ for each agent $p$ we obtain a suitable decentralized control $u_p(\mathcal{N}_p(T_l))$ which only depends on its neighbours in the time window $l$.
+ For a sufficiently small time window the  neighbourhood of agent $p$ does not change throughout the evolution, therefore we assume it is constant in the time window. 
 
-   The algorithm reads as the following: given the system (\ref{csm}):
+
+   The algorithm reads as the following: given the system (\ref{csmp}):
    \begin{enumerate}
    \item Partition time interval $[0, T]$ into time windows $\Delta T$: $0 = T_0, T_1, \dots, T_m = T$.
-   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the OPC (\ref{opci}) with constrains (\ref{csm}) for the initial conditions $(x(T_{l-1}), v(T_{l-1}))$.
-   \item From the solution of (\ref{opci}), (\ref{csm})  retrieve the  state for the agent $p$ in the time window $l$ $(x_p(t), v_p(t))$ and control $u_p(t)$, $t\in [T_{l-1}, T_{l}]$.
+   \item For each time window  $[T_{l-1}, T_{l}]$, $l = 1, \dots, m$ and for each agent $p$, $p = 1, \dots, N$  solve the OPC (\ref{jp}) - (\ref{csmp}) for the initial conditions $(x(T_{l-1}), v(T_{l-1}))$.
+   \item From the solution of (\ref{jp}), (\ref{csmp})  retrieve the  state for the agent $p$ in the time window $l$ $(x_p(t), v_p(t))$ and control $u_p(t)$, $t\in [T_{l-1}, T_{l}]$.
    \item Repeat the steps 2-3 until the solutions for all windows are obtained. 
  \end{enumerate}
  
@@ -177,7 +190,7 @@ We assume the neighbourhood of agent $p$ does not change during evolution in tim
  
  
  \section{The optimal contro problem and its discretization}
-  We represent the optimal control problem  (\ref{opci}), (\ref{csm}) for agent $p$ on time window $[T_{l-1}, T_{l}]$ in Mayer form.
+  We represent the optimal control problem  (\ref{jp}), (\ref{csmp}) for agent $p$ on time window $[T_{l-1}, T_{l}]$ in Mayer form.
   
  \begin{align}
  \D
@@ -187,13 +200,13 @@ We assume the neighbourhood of agent $p$ does not change during evolution in tim
 where  the control $u \in  L^{\infty}([T_{l-1}, T_{l}], \mathbb{R}^{N_p \times d})$,
 the state $X\in H^1([T_{l-1}, T_{l}], \mathbb{R}^{N_p \times d} \times \mathbb{R}^{N_p\times d} \times \mathbb{R})$
 in a compact form composed of the position and velocity 
-states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots, x_{i_{N_p}}(t))$,
+states of (\ref{csmp})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots, x_{i_{N_p}}(t))$,
  $v(t) = (v_{i_1}(t), \dots, v_{i_{N_p}}(t))$, $\{i_1, \dots, i_{N_p}\} \in \bar{\mathcal{N}}_p(T_l)$, 
  and $z(t)$ is an auxiliary component 
  $$
  z(t) =  \sum_{j\in \mathcal{N}_p(T_{l-1})} \bar{V}(\|x_p(t) - x_j(t)\|),
  $$
- with the initial condition $z(0) = 0$ and $F(X)$ is the dynamics of the system (\ref{csm}) in compact form
+ with the initial condition $z(0) = 0$ and $F(X)$ is the dynamics of the system (\ref{csmp}) in compact form
  $$
  F(X(t), u(t)) =
   \left( 
@@ -204,7 +217,7 @@ states of (\ref{csm})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots,
  \end{array} 
  \right), 
  $$
- where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_{l-1})}$ which depends on $x$.
+ where $L_x$ is the Laplacian of the $N_p\times N_p$ matrix $(a(\|x_i - x_j\|)/N_p)_{i, j\in\bar{\mathcal{N}}_p(T_{l-1})}$ which depends on $x$, $u(t) = (0, \dots, u_p(t), \dots, 0)$.
  For the functional $C$ to correspond to the problem in its original form it is chosen 
  $$
  C(X(T_l)) = z(T_l) + B(v(T_l), v(T_l)).
@@ -253,13 +266,13 @@ Provided the discrete OPC (\ref{discrete_cost} - \ref{discrete_equation_y}) the 
    \D
     & X^{k+1}  = X^k + h\sum_{i=1}^{s}b_iF(y^{ki}, u^{ki}), \qquad X_0 = X(0),   \label{os_state_x}\\
  	& y^{ki} = X^k + h\sum_{j=1}^{s}a_{ij}F(y^{kj}, u^{kj}),   \label{os_state_y}\\
- 	& p^k = p^{k+1} + \sum_{i=1}^{s}\psi^{ki}, \qquad p^n = - \nabla_xC(X^n),  \label{os_adjoint_p}\\
- 	& \psi^{ki} = (\nabla_x F(y^{ki}, u^{ki}))^{T} \left( p^{k+1} + \sum_{j=1}^{s} \frac{a_{ji}}{b_i}\psi^{kj}\right), \label{os_adjoint_psi} 
+ 	& p^k = p^{k+1} + h\sum_{i=1}^{s}b_i \chi^{ki}\nabla_x F(y^{ki}, u^{ki}), \qquad p^n = - \nabla_xC(X^n),  \label{os_adjoint_p}\\
+ 	& \chi^{ki} = p^{k+1} + h\sum_{j=1}^{s} \frac{b_j a_{ji}}{b_i}\chi^{kj}\nabla_x F(y^{kj}, u^{kj}), \label{os_adjoint_psi} 
    \end{align}
-
+where $p^k$ and $\chi^{ki}$ are the adjoint variables.
 The first order discrete system (\ref{os_state_x} - \ref{os_adjoint_psi}) provides a convenient way to compute the exact gradient of the discrete cost functional (\ref{discrete_cost})
 \begin{equation}
-\nabla_{u^{ki}} C(u) = - (\nabla_u F(y^{ki}, u^{ki}))^{T} \left( p^{k+1} + \sum_{j=1}^{s}\frac{a_{ji}}{b_i}\psi^{kj}\right), 
+\nabla_{u^{ki}} C(u) = -h b_i \chi^{ki} (\nabla_u F(y^{ki}, u^{ki})), 
 \label{discretegradient}
  \end{equation}  
  for $1\leq i, j\leq s$, and $0\leq k\leq n-1$, where the intermediate values for the discrete state and adjoint variables are obtained by first
@@ -316,23 +329,24 @@ v_0 =
 	      0&  -1\\
 \end{array} \right).
 \]
-The time of system evolution is $T = 30$ with  $m = 50$ uniform time windows, where  on each window the discretization grid
+The time of system evolution is $T = 30$ with  $m = 30$ uniform time windows, where  on each window the discretization grid
 is taken with $n = 10$ nodes.  The connection radius is $R = 2$. 
 
-In the first simulation we test our decentralized optimal control approach. On Figure \ref{ev} the evolution of the system is plotted. The initial position
+Here we test our decentralized optimal control approach and compare it with the centralized one. 
+On Figure \ref{ev} the evolution of the system  controlled by decentralized strategy (\ref{jp} - \ref{csmp}) is plotted. The initial position
 is denoted with circles while the final velocities are depicted with red arrows. On Figure \ref{g} the initial as well as terminal configurations and the connectivity graphs of the system are present.
 
 
 
 \begin{figure}[ht]
   \begin{minipage}[b]{0.5\textwidth}
-    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_ev.eps}
+    \includegraphics[width=\textwidth]{figures/a5_D_ev.eps}
     \caption{Evolution of the system}
     \label{ev}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.5\textwidth}
-    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_g.eps}
+    \includegraphics[width=\textwidth]{figures/a5_D_g.eps}
     \caption{Initial and terminal configurations}
     \label{g}
   \end{minipage}
@@ -340,13 +354,13 @@ is denoted with circles while the final velocities are depicted with red arrows.
 
 \begin{figure}[ht]
   \begin{minipage}[b]{0.5\textwidth}
-    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_cg0.eps}
+    \includegraphics[width=\textwidth]{figures/a5_D_cg0.eps}
     \caption{Connectivity at the initial configuration}
     \label{g0}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.5\textwidth}
-    \includegraphics[width=\textwidth]{figures/a5D_L+V_fine_mesh_NICE_cgT.eps}
+    \includegraphics[width=\textwidth]{figures/a5_D_cgT.eps}
     \caption{Connectivity at the terminal configuration}
     \label{gT}
   \end{minipage}
@@ -355,13 +369,49 @@ is denoted with circles while the final velocities are depicted with red arrows.
  
  \begin{figure}[ht]
  \centering
- \includegraphics[scale=0.5]{figures/a5D_L+V_fine_mesh_NICE_lv.eps}
- \caption{Lyapunov function}
+ \includegraphics[scale=0.5]{figures/a5_D_lf.eps}
+ \caption{$B(v(t), v(t))$}
  \label{lf}
  \end{figure}
   \newpage
-The evolution of the system can be observed on the Figure \ref{ev1}. On the Figure \ref{lf} we see the velocity deviation throughout the evolution. The bump in the velocity deviation $B(v(t), v(t))$
-is due to the fact that initially the control steers the agents towards each other and after the completeness of the network graph (see Figure \ref{gT}) is reached it brings smoothly the system to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn}) = 4.21e-07$. Under such terminal configuration the system has entered the consensus region since quantity $E(x^{mn}, v^{mn}) = -0.50$ has become negative and the system tends to consensus uncontrolled.
+The evolution of the system can be observed on the Figure \ref{ev}. On the Figure \ref{lf} we see the velocity deviation throughout the evolution. The bump in the velocity deviation $B(v(t), v(t))$
+is due to the fact that initially the control steers the agents towards each other and after the completeness of the network graph (see Figure \ref{gT}) is reached it brings smoothly the system to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn}) = 1.27e-09$. Under such terminal configuration the system has entered the consensus region since quantity $E(x^{mn}, v^{mn}) = -0.28$ has become negative and the system tends to consensus uncontrolled.
+
+We also consider the centralized optimal control strategy (\ref{j}) - (\ref{csm}) for the same configuration. The evolution of the system controlled by centralized strategy (\ref{j}) -(\ref{csm}) can be observed on Figure \ref{evc}, as in the previous example the black arrows denote initial velocities and the red ones velocities in the terminal configuration.  The terminal values 
+of velocity deviation $B(v^{mn}, v^{mn}) = 2.0e-20$ and the consensus quantity  $E(x^{mn}, v^{mn}) = -0.10$. On Figure \ref{lfc} the evolution of velocity deviation is present.
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5_C_ev.eps}
+    \caption{Evolution of the system}
+    \label{evc}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5_C_lf.eps}
+    \caption{$B(v(t), v(t))$ }
+    \label{lfc}
+  \end{minipage}
+\end{figure}
+
+Here we compare the norm of controls for both centralized and decentralized control strategies. 
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5_C_c.eps}
+    \caption{Centralized control energy}
+    \label{cc}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figures/a5_D_c.eps}
+    \caption{Decentralized control energy}
+    \label{dc}
+  \end{minipage}
+\end{figure}
+
+In our experiments the decentralized control turns to be more expensive, what apparently is the trade-off which comes with the decentralization. 
+The energy to control the system spend by centralized control  $\int_{0}^{T} \|u^c(t)\|_2 dt  = 1.56$, whereas that of decentralized $\int_{0}^{T} \|u^d(t)\|_2 dt  = 28.27$.
+
+
  
 %a10D_L+V_fine_mesh_NICE_lv.eps
 We also  consider a \textquotedblleft worse-case\textquotedblright setting involving 10 agents with initial configuration (Figure \ref{g1}) situated on a  zig-zag line forming a minimally connected network at the initial time. The evolution of the system has been illustrated in Figure \ref{ev1} for $T = 30$ and radius of interaction $R = 2$, the number of MPC time windows was chosen $m = 80$  and discretization grid with $n = 40$ grid-points.  On Figure \ref{lf} is plotted the velocity deviation of the group $B(v(t), v(t))$. We observe how the system struggles to maintain the connectivity of the network throughout the evolution, in the end, after the completeness of the network graph is restored (Figure \ref{gT1}), it tends to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn}) = 1.83e-07$. Here again the consensus region is reached since $E(x^{mn}, v^{mn}) = -0.35$ is negative. 
