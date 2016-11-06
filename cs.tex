@@ -128,6 +128,36 @@ In this paper we would like to design decentralized feedback and optimal control
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \section{Feedback control that guarantees connectivity for the Cucker-Smale system}
 Consider the feedback control for the Cucker-Smale system 
@@ -153,6 +183,33 @@ Control (\ref{myhc}) is virtually control (\ref{bfk})  scaled by a force factor 
 units remain to be that of velocity rather than spatial ones. With such control we can use the same argument as in \cite{jfwpc} with potential (\ref{potential}) replaced by (\ref{potentialw})  to verify that for the system (\ref{csm}), (\ref{myhc})  
 for any pair of switching times $t_p < t_q$ the switching topology satisfies $\mathcal{G}(t_p) \subset \mathcal{G}(t_q)$ what implies that the connectivity of the network does not decrease with time.
 And according to Theorem 3.3 from \cite{jfwpc} all agent velocities become asymptotically the same and collisions among agents are avoided. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -218,6 +275,38 @@ And according to Theorem 3.3 from \cite{jfwpc} all agent velocities become asymp
    \item Repeat the steps 2-3 until the solutions for all windows are obtained. 
  \end{enumerate}
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -292,6 +381,27 @@ states of (\ref{csmp})   $X(t) = (x(t), v(t), z(t))$, $x(t) = (x_{i_1}(t), \dots
  
  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \subsection{The gradient evaluation}
 Provided the discrete OPC (\ref{discrete_cost} - \ref{discrete_equation_y}) the corresponding  optimality system  is given by
@@ -341,6 +451,29 @@ The first order discrete system (\ref{os_state_x} - \ref{os_adjoint_psi}) provid
   
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  \newpage
  \section{Numerical experiments}
 In this section some simulations are presented to testify the effectiveness of the proposed algorithm. We consider a multi-agent system (\ref{csm}) with the interaction function 
@@ -365,7 +498,7 @@ v_0 =
 \]
 
 We consider the evolution of the system for time $T = 30$. The decentralized control strategies are regarded for the radius of interaction $R = 2$.  
- \section{Example 1}
+ \subsection{Example 1}
 Here we test our decentralized optimal control approach and compare it with the centralized one. 
  
 For the MPC algorithm we take  $m = 30$ uniform time windows, where  on each window the discretization grid
@@ -459,7 +592,7 @@ The energy to control the system spend by centralized control in Figure \ref{cc}
 
 
 
- \section{Example 2}
+ \subsection{Example 2}
   Here we compare the decentralized heuristic feedback control (\ref{myhc}) with control (\ref{controljad}).
 System (\ref{csm}) controlled by (\ref{myhc}) tends to consensus almost instantly preserving the connectivity of the network. The consensus region is reached 
   in time   $t^* = 0.062$,  $E(x(t), v(t)) < 0$ for all $t>t^{*}$, whereas the control (\ref{controljad}) steers the system to consensus region in considerably larger time  $t^* = 1.089$.
