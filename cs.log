@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  6 NOV 2016 15:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2016.9.12)  6 NOV 2016 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,6 +492,8 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 422--433
 [][]  [] 
  []
 
+[9 <./figures/a5_D_cg0-eps-converted-to.pdf> <./figures/a5_D_cgT-eps-converted-
+to.pdf> <./figures/a5_D_lf-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/a5_C_c.eps>
 (epstopdf)                    date: 2016-11-06 13:11:12
 (epstopdf)                    size: 16530 bytes
@@ -500,14 +502,15 @@ Package epstopdf Info: Source file: <figures/a5_C_c.eps>
 (epstopdf)                    size: 4669 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a5_C_c-eps-convert
 ed-to.pdf figures/a5_C_c.eps>
-(epstopdf)             \includegraphics on input line 438.
+(epstopdf)             \includegraphics on input line 445.
 Package epstopdf Info: Output file is already uptodate.
-<figures/a5_C_c-eps-converted-to.pdf, id=67, 421.575pt x 316.18124pt>
+
+<figures/a5_C_c-eps-converted-to.pdf, id=87, 421.575pt x 316.18124pt>
 File: figures/a5_C_c-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/a5_C_c-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a5_C_c-eps-converted-to.pdf used on input line
- 438.
+ 445.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 Package epstopdf Info: Source file: <figures/a5_D_c.eps>
 (epstopdf)                    date: 2016-11-06 13:00:53
@@ -517,23 +520,23 @@ Package epstopdf Info: Source file: <figures/a5_D_c.eps>
 (epstopdf)                    size: 5196 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/a5_D_c-eps-convert
 ed-to.pdf figures/a5_D_c.eps>
-(epstopdf)             \includegraphics on input line 444.
+(epstopdf)             \includegraphics on input line 451.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/a5_D_c-eps-converted-to.pdf, id=68, 421.575pt x 316.18124pt>
+<figures/a5_D_c-eps-converted-to.pdf, id=88, 421.575pt x 316.18124pt>
 File: figures/a5_D_c-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/a5_D_c-eps-converted-to.pdf>
 Package pdftex.def Info: figures/a5_D_c-eps-converted-to.pdf used on input line
- 444.
+ 451.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 437--448
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 444--455
 [][]  [] 
  []
 
 
-Overfull \hbox (2.94508pt too wide) in paragraph at lines 450--452
+Overfull \hbox (2.94508pt too wide) in paragraph at lines 457--459
 [][] \OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\
 OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k[]\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = 1\OML
 /cmm/m/it/10 :\OT1/cmr/m/n/10 56$, whereas that of de-cen-tral-ized on Fig-ure 
@@ -542,8 +545,6 @@ OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k[]\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = 1\OML
 
  []
 
-[9 <./figures/a5_D_cg0-eps-converted-to.pdf> <./figures/a5_D_cgT-eps-converted-
-to.pdf> <./figures/a5_D_lf-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/my_h_ev.eps>
 (epstopdf)                    date: 2016-11-06 13:43:14
 (epstopdf)                    size: 119123 bytes
@@ -552,15 +553,14 @@ Package epstopdf Info: Source file: <figures/my_h_ev.eps>
 (epstopdf)                    size: 7263 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/my_h_ev-eps-conver
 ted-to.pdf figures/my_h_ev.eps>
-(epstopdf)             \includegraphics on input line 464.
+(epstopdf)             \includegraphics on input line 470.
 Package epstopdf Info: Output file is already uptodate.
-
 <figures/my_h_ev-eps-converted-to.pdf, id=89, 421.575pt x 316.18124pt>
 File: figures/my_h_ev-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/my_h_ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/my_h_ev-eps-converted-to.pdf used on input lin
-e 464.
+e 470.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 Package epstopdf Info: Source file: <figures/jad_h_ev.eps>
 (epstopdf)                    date: 2016-11-06 13:50:30
@@ -570,7 +570,7 @@ Package epstopdf Info: Source file: <figures/jad_h_ev.eps>
 (epstopdf)                    size: 14492 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/jad_h_ev-eps-conve
 rted-to.pdf figures/jad_h_ev.eps>
-(epstopdf)             \includegraphics on input line 470.
+(epstopdf)             \includegraphics on input line 476.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/jad_h_ev-eps-converted-to.pdf, id=90, 421.575pt x 316.18124pt>
@@ -578,10 +578,10 @@ File: figures/jad_h_ev-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/jad_h_ev-eps-converted-to.pdf>
 Package pdftex.def Info: figures/jad_h_ev-eps-converted-to.pdf used on input li
-ne 470.
+ne 476.
 (pdftex.def)             Requested size: 172.5pt x 129.37462pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 463--474
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 469--480
 [][]  [] 
  []
 
@@ -593,18 +593,18 @@ Package epstopdf Info: Source file: <figures/both_h_lf.eps>
 (epstopdf)                    size: 7260 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/both_h_lf-eps-conv
 erted-to.pdf figures/both_h_lf.eps>
-(epstopdf)             \includegraphics on input line 478.
+(epstopdf)             \includegraphics on input line 484.
 Package epstopdf Info: Output file is already uptodate.
 <figures/both_h_lf-eps-converted-to.pdf, id=91, 447.6725pt x 331.2375pt>
 File: figures/both_h_lf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/both_h_lf-eps-converted-to.pdf>
 Package pdftex.def Info: figures/both_h_lf-eps-converted-to.pdf used on input l
-ine 478.
+ine 484.
 (pdftex.def)             Requested size: 223.8357pt x 165.61833pt.
- (./cs.bbl [10 <./figures/a5_C_ev-eps-converted-to.pdf> <./figures/a5_C_lf-eps-
-converted-to.pdf> <./figures/a5_C_c-eps-converted-to.pdf> <./figures/a5_D_c-eps
--converted-to.pdf>] [11 <./figures/my_h_ev-eps-converted-to.pdf> <./figures/jad
+ [10 <./figures/a5_C_ev-eps-converted-to.pdf> <./figures/a5_C_lf-eps-converted-
+to.pdf> <./figures/a5_C_c-eps-converted-to.pdf> <./figures/a5_D_c-eps-converted
+-to.pdf>] (./cs.bbl [11 <./figures/my_h_ev-eps-converted-to.pdf> <./figures/jad
 _h_ev-eps-converted-to.pdf> <./figures/both_h_lf-eps-converted-to.pdf>]) [12] (
 ./cs.aux)
 
@@ -632,7 +632,7 @@ b></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/a
 msfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on cs.pdf (12 pages, 303689 bytes).
+Output written on cs.pdf (12 pages, 303077 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams

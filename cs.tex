@@ -39,7 +39,7 @@
 
 
 \title{Optimal and feedback decentrilized control for Cucker Smale system}
-\author{M. Kryven, M. Caponigro, A. Borzi}
+\author{M. Kryven, M. Caponigro}
 \maketitle
 
 
@@ -50,7 +50,7 @@
 
 
 \section{Introduction}
-The aim of this work is to design a decentralized optimal control strategy for the Cucker-Smale system to steer the system to consensus while maintaining the spatial connectivity of the initial interaction graph.
+The aim of this work is to design  decentralized control strategies for the Cucker-Smale system to steer the system to consensus while maintaining the spatial connectivity of the initial interaction graph.
 
 Consider the Cucker-Smale system
 \begin{align}
@@ -142,7 +142,7 @@ where $W$ is a potential of the form
 \label{potentialw}
 \end{equation}
 This potential has almost the same effect as (\ref{potential}) it increases the binding force between agents as they are about to break the network connectivity as well as rules out collisions with the difference that it acts directly on velocity alignment rather than spatial distance between agents and still guarantees the connectivity of the network. Note, that it smoothly decays Figure \ref{potentialwplot} as the distance between agents deviates from the safe one which is $R/2$, if $\|x_i - x_j\| = R/2$ the control completely switches of since the agents $i$ and $j$ are at a safe distance from breaking the connectivity or colliding, 
-as soon as  $\|x_i - x_j\| > R/2$ or $\|x_i - x_j\| < R/2$ the control smoothly increases its force and becomes unbounded as $\|x_i - x_j\|$ approaches $0$ or $R$ to prevent the network connectivity breach or collisions respectively. 
+as soon as  $\|x_i - x_j\| > R/2$ or $\|x_i - x_j\| < R/2$ the control smoothly increases its force and becomes unbounded as $\|x_i - x_j\|$ approaches $R$ or $0$ to prevent the network connectivity breach or collisions respectively. 
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.5]{figures/potentialwplot.eps}
@@ -366,12 +366,12 @@ v_0 =
 
 We consider the evolution of the system for time $T = 30$. The decentralized control strategies are regarded for the radius of interaction $R = 2$.  
  \section{Example 1}
- Here we compare the decentralized optimal control strategy with the centralized one. 
+Here we test our decentralized optimal control approach and compare it with the centralized one. 
  
 For the MPC algorithm we take  $m = 30$ uniform time windows, where  on each window the discretization grid
 is taken with $n = 10$ nodes.  
 
-Here we test our decentralized optimal control approach and compare it with the centralized one. 
+
 On Figure \ref{ev} the evolution of the system  controlled by decentralized strategy (\ref{jp} - \ref{csmp}) is plotted. The initial position
 is denoted with circles while the final velocities are depicted with red arrows. On Figure \ref{g} the initial as well as terminal configurations and the connectivity graphs of the system are present.
 
@@ -414,7 +414,7 @@ is denoted with circles while the final velocities are depicted with red arrows.
  \end{figure}
   \newpage
 The evolution of the system can be observed on the Figure \ref{ev}. On the Figure \ref{lf} we see the velocity deviation throughout the evolution. The bump in the velocity deviation $B(v(t), v(t))$
-is due to the fact that initially the control steers the agents towards each other and after the completeness of the network graph (see Figure \ref{gT}) is reached it brings smoothly the system to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn})$ tends to zero. Under such terminal configuration the system has entered the consensus region in time  $t^* = 1.823$ since  $E(x(t), v(t)) < 0$ for all $t>t^{*}$ and the system tends to consensus uncontrolled.
+is due to the fact that initially the control steers the agents towards each other and after the completeness of the network graph (see Figure \ref{gT}) is reached it brings smoothly the system to consensus with terminal value of velocity deviation $B(v^{mn}, v^{mn})$ tends to zero. Under such terminal configuration the system has entered the consensus region in time  $t^* = 1.823$,  $E(x(t), v(t)) < 0$ for all $t>t^{*}$ and the system tends to consensus uncontrolled.
 
 We also consider the centralized optimal control strategy (\ref{j}) - (\ref{csm}) for the same configuration. The evolution of the system controlled by centralized strategy (\ref{j}) -(\ref{csm}) can be observed on Figure \ref{evc}, as in the previous example the black arrows denote initial velocities and the red ones velocities in the terminal configuration.  The terminal values 
 of velocity deviation $B(v^{mn}, v^{mn})$ tends to zero and the consensus quantity (\ref{cq}) becomes negative after time $t^* = 0.825$,  $E(x(t), v(t)) < 0$ for all $t>t^{*}$. On Figure \ref{lfc} the evolution of velocity deviation is present.
@@ -432,6 +432,13 @@ of velocity deviation $B(v^{mn}, v^{mn})$ tends to zero and the consensus quanti
   \end{minipage}
 \end{figure}
 
+
+
+
+
+
+
+\newpage
 Here we compare the norm of controls for both centralized and decentralized control strategies. 
 \begin{figure}[ht]
   \begin{minipage}[b]{0.5\textwidth}
@@ -451,14 +458,13 @@ In our experiments the decentralized control turns to be more expensive, what ap
 The energy to control the system spend by centralized control in Figure \ref{cc} amounts to  $\int_{0}^{T} \|u^c(t)\|_2 dt  = 1.56$, whereas that of decentralized on Figure \ref{dc} $\int_{0}^{T} \|u^d(t)\|_2 dt  = 28.27$.
 
 
- The connection radius is $R = 2$. 
 
  \section{Example 2}
   Here we compare the decentralized heuristic feedback control (\ref{myhc}) with control (\ref{controljad}).
 System (\ref{csm}) controlled by (\ref{myhc}) tends to consensus almost instantly preserving the connectivity of the network. The consensus region is reached 
-  in time   $t^* = 0.062$ since  $E(x(t), v(t)) < 0$ for all $t>t^{*}$, whereas the control (\ref{controljad}) steers the system to consensus region in considerably larger time  $t^* = 1.089$.
-  The evolution of systems (\ref{csm}), (\ref{myhc}) and (\ref{csm}), (\ref{controljad}) is present on Figures \ref{my_h_ev} - \ref{jad_h_ev} respectively.
-  The support of velocity deviation throughout the evolution of both systems is demonstrated on Figure \ref{both_h_lf}, where we can observe that velocity alignment of the (\ref{myhc}) controlled system is much faster and more rapid.
+  in time   $t^* = 0.062$,  $E(x(t), v(t)) < 0$ for all $t>t^{*}$, whereas the control (\ref{controljad}) steers the system to consensus region in considerably larger time  $t^* = 1.089$.
+  The evolutions of systems (\ref{csm}), (\ref{myhc}) and (\ref{csm}), (\ref{controljad}) are present on Figures \ref{my_h_ev} - \ref{jad_h_ev} respectively.
+  The support of velocity deviation throughout the evolution of both systems is demonstrated on Figure \ref{both_h_lf}, where we can observe that velocity alignment of the (\ref{myhc}) controlled system is much faster.
   \begin{figure}[ht]
     \begin{minipage}[b]{0.5\textwidth}
       \includegraphics[width=\textwidth]{figures/my_h_ev.eps}
@@ -482,6 +488,8 @@ System (\ref{csm}) controlled by (\ref{myhc}) tends to consensus almost instantl
   
   
   
+  
+  \newpage
   \bibliography{mybib}{}
   \bibliographystyle{plain}
   
