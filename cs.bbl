@@ -1,0 +1,56 @@
+\begin{thebibliography}{1}
+
+\bibitem{bfk}
+Mattia Bongini, Dante Kalise, and Massimo Fornasier.
+\newblock {(Un)conditional consensus emergence under perturbed and
+  decentralized feedback controls}.
+\newblock {NETCO 2014 - New Trends in Optimal Control}, June 2014.
+\newblock Parallel session.
+
+\bibitem{cftp}
+Marco Caponigro, Massimo Fornasier, Benedetto Piccoli, and Emmanuel Tr\'{e}lat.
+\newblock Sparse stabilization and control of alignment models.
+\newblock {\em Mathematical models and Methods in Applied Sciences. Vol.25, No.
+  3, 521 - 564}, 2015.
+
+\bibitem{cs1}
+F.~Cucker and S.~Smale.
+\newblock Emergent behaviour in flocks.
+\newblock {\em IEEE Trans. Automat. Control, 52(5):852-862}, 2007.
+
+\bibitem{cs2}
+F.~Cucker and S.~Smale.
+\newblock On the mathematics of emergence.
+\newblock {\em Jpn. J. Math., 2(1):197-227}, 2007.
+
+\bibitem{jdccms}
+Maria Carmela~De Gennaro and Ali Jadbabaie.
+\newblock Decentralized control of connectivity for multi-agent systems.
+\newblock {\em IEEE Conference on Decision and Control, New Orleans, LA, USA},
+  2007.
+
+\bibitem{theorem11}
+S.-Y. Ha, T.~Ha, and J.-H. Kim.
+\newblock Emergent behaviour of a cucker-smale type particle model with
+  nonlinear velocity couplings.
+\newblock {\em IEEE Trans. Automat. Control, 55(7):1679-1683}, 2010.
+
+\bibitem{Hager2000}
+William~W. Hager.
+\newblock Runge-kutta methods in optimal control and the transformed adjoint
+  system.
+\newblock {\em Numerische Mathematik}, 87(2):247--282, 2000.
+
+\bibitem{hagerzhang}
+William~W. Hager and Hongchao Zhang.
+\newblock A new conjugate gradient method with guaranteed descent and an
+  efficient line search.
+\newblock {\em SIAM Journal on Optimization}, 16(1):170--192, 2005.
+
+\bibitem{jfwpc}
+Michael~M. Zavlanos, Ali Jadbabaie, and George~J. Pappas.
+\newblock Flocking while preserving network connectivity.
+\newblock {\em IEEE Conference on Decision and Control, New Orleans, LA, USA},
+  2007.
+
+\end{thebibliography}
